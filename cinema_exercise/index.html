@@ -115,12 +115,12 @@
                     <!-- <button type="button" class="btn btn-light" style="width:100%">'</button> -->
                     <select class="custom-select custom-select-lg mb-3" v-on:click="search()" v-model="selected">
                         <option selected value="0">Select Category</option>
-                        <option v-for="cat in categories" v-bind:value="cat.id" >{{cat.name}}</option>
+                        <option v-for="cat in categories" v-bind:value="cat.id">{{cat.name}}</option>
                     </select>
                 </div>
                 <div class="col-6" style="text-align:right;padding-top: 15px;">
                     <input type="text" name="search" placeholder="Search.." style="height:5vh" id="search">
-                    <button type="button" style="height:5vh;margin-left: -5px"><i class="fa fa-search"></i></button>
+                    <button type="button" style="height:5vh;margin-left: -5px" v-on:click="search2"><i class="fa fa-search"></i></button>
                 </div>
             </div>
         </div>
@@ -291,6 +291,23 @@
                     } else {
                         for (var index = 0; index < this.movies.length; index++) {
                             if (this.movies[index].categories.includes(text)) {
+                                this.movies[index].showing = true
+                            } else {
+                                this.movies[index].showing = false
+                            }
+                        }
+                    }
+                },
+                search2: function () {
+                    var text = document.querySelector("#search").value
+                    if (text == "") {
+                        for (var index = 0; index < this.movies.length; index++) {
+                            this.movies[index].showing = true
+                        }
+                        console.log(text)
+                    } else {
+                        for (var index = 0; index < this.movies.length; index++) {
+                            if (this.movies[index].name.th.indexOf(text) > -1 || this.movies[index].name.en.toUpperCase().indexOf(text.toUpperCase()) > -1) {
                                 this.movies[index].showing = true
                             } else {
                                 this.movies[index].showing = false
