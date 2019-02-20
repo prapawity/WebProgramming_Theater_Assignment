@@ -1,7 +1,6 @@
-Vue.component("navbar", {
-    template:
-        `
-    <header>
+Vue.component('navbar', {
+    template: `
+    <div>
       <nav style="z-index:1000;">
           <div class="menu-icon">
               <i class="fa fa-bars fa-2x"></i>
@@ -20,6 +19,5 @@ Vue.component("navbar", {
               </ul>
           </div>
       </nav>
-    </header>
-    `
+    </div>`
 });
