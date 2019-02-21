@@ -65,7 +65,7 @@ nav {
       position: fixed;
       width: 100%;
       line-height: 30px;
-      background-color: white
+      background-color: black;
 }
 
 nav .logo {
@@ -119,6 +119,13 @@ nav ul li a {
       color: white;
 }
 
+.form-sign-in{
+      font-size: 18px;
+}
+
+.all-sign-in{
+      padding: 5%;
+}
 @media(max-width: 960px) {
 
       .logo {
