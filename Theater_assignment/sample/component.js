@@ -2,11 +2,8 @@ Vue.component('navbar', {
   template: `
   <div>
   <nav style="z-index:2;text-align: right;">
-      <div class="menu-icon">
-          <i class="fa fa-bars fa-2x"></i>
-      </div>
       <img class="logo" style="width: auto;min-width: 10%; max-width: 15%;" src="poster/moviehub1kpx.png">
-          <ul style="width:100%">
+          <ul style="width:100;margin-bottom:0">
               <li><a href="#" style="color:orange">Home</a></li>
               <li><a href="#" style="color:orange">About</a></li>
               <li><a href="#" style="color:orange">Blog</a></li>

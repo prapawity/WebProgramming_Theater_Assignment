@@ -54,7 +54,7 @@ body {
 }
 
 .logo {
-      padding-top: 30px;
+      padding-top: 20px;
       padding-left: 20px;
       position: sticky;
       float: left;
@@ -64,7 +64,7 @@ body {
 nav {
       position: fixed;
       width: 100%;
-      line-height: 60px;
+      line-height: 30px;
       background-color: white
 }
 
