@@ -207,3 +207,10 @@ input[type=text]:focus {
 /* #popUpWindow{
       background: lightblue; 
 } */
+.seat{
+      width: 50px;
+      height: auto;
+}
+.seat:hover{
+      cursor: pointer;
+}

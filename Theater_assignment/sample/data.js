@@ -1,6 +1,33 @@
 var vm = new Vue({
     el: "#app1",
     data: {
+        posterlist: [
+            // {
+            //     src: 'https://wallpapercave.com/wp/wp2505826.jpg',
+            //     id: 0,
+            //     class: 'active'
+            // },
+            {
+                src: 'https://images5.alphacoders.com/936/936030.jpg',
+                id: 1,
+                class: ''
+            },
+            {
+                src: 'http://hdqwalls.com/wallpapers/ant-man-and-the-wasp-movie-4k-c3.jpg',
+                id: 2,
+                class: ''
+            },
+            {
+                src: 'https://pixelz.cc/wp-content/uploads/2017/11/interstellar-uhd-4k-wallpaper.jpg',
+                id: 3,
+                class: ''
+            },
+            {
+                src: 'http://hdqwalls.com/wallpapers/guardians-of-the-galaxy-volume-2-5k-4k.jpg',
+                id: 4,
+                class: ''
+            }
+        ],
         selected: 0,
         categories: [{
                 id: 1,

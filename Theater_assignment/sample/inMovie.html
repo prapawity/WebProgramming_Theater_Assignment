@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="app1">
+    <div id="app1" style="background-color:black">
         <navbar></navbar>
         <div class="jumbotron" style="background-color: black;height: 100vh;padding-top:90px;z-index: 1;">
             <!-- <video class="video-background" preload="true" muted="false" autoplay="true" loop="true"> -->
@@ -49,10 +49,145 @@
                 </div>
             </div>
         </div>
+        <div class="container" style="margin-top: 5px">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne" style="color:white;">
+                                <h3>Choose Your Theater</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12" style="margin-top: 15px;width: 100%">
+                                        <select class="custom-select custom-select-lg mb-3" v-model="selected">
+                                            <option selected value="0">Select Category</option>
+                                            <option v-for="cat in categories" v-bind:value="cat.id">{{cat.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo" style="color:white;">
+                                <h3>Choose Your Time</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample"
+                        style="margin-bottom:10px;">
+                        <div class="card-body" style="padding:0">
+                            <div class="container-fluid">
+                                <div class="row" style="margin-bpttom:10px;">
+                                    <div class="col-12" style="width: 100%;background-color: #FBEEE6">
+                                        <h1 style="color:orange;">Theater name</h1>
+                                    </div>
+                                    <div class="col-3" style="margin-top: 15px;width: 100%;text-align: center;margin: auto">
+                                        <img src="https://lh3.googleusercontent.com/XLD4P-TGDoLTj6eqSx8AbqCX0hLfmuyoBRDDmtV8wBZYRLIM5ZRePH2PdgBeLG17IKzI07mKeWB608rbbO0J3A=h59">
+                                    </div>
+                                    <div class="card-body" style="border-left: 1px solid #c6c7c7;margin: 10px;">
+                                        <div class="container-fluid" style="width: 100%">
+                                            <div class="row">
+                                                <div class="col-12" style="width: 100%">
+                                                    <h1>ENG/TH</h1>
+                                                </div>
+                                                <div class="col" style="width: 100%;height: 5vh;">
+                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                </div>
+                                                <div class="col" style="width: 100%;">
+                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                </div>
+                                                <div class="col" style="width: 100%;">
+                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                </div>
+                                                <div class="col" style="width: 100%;">
+                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                </div>
+                                                <div class="col" style="width: 100%;">
+                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree" style="color:white;">
+                                <h3>Choose Your Seat</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12" style="text-align:center;margin-bottom: 30px">
+                                        <img src="poster/screen.svg" style="width:100%;">
+                                        <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
+                                    </div>
+                                    <div class="col-1" style="text-align:center;margin: auto">
+                                        <h4>F</h4>
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
     <script src="./component.js"></script>
     <script src="./data.js"></script>
+    <script src="./collap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
