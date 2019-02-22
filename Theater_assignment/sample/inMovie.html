@@ -19,15 +19,15 @@
 </head>
 
 <body onload="myFunction()">
-        <div style="position:fixed;width:100%;height:100vh;background-color: orange;z-index: 20;" id="loader" >
-            <div class="frame">
-                <div class="center" >
-                    <div class="dot-1"></div>
-                    <div class="dot-2"></div>
-                    <div class="dot-3"></div>
-                </div>
+    <div style="position:fixed;width:100%;height:100vh;background-color: orange;z-index: 20;" id="loader">
+        <div class="frame">
+            <div class="center">
+                <div class="dot-1"></div>
+                <div class="dot-2"></div>
+                <div class="dot-3"></div>
             </div>
         </div>
+    </div>
     <div id="app1" style="background-color:black">
         <navbar></navbar>
         <div class="jumbotron" style="background-color: black;height: 100vh;padding-top:90px;z-index: 1;">
@@ -65,7 +65,7 @@
                         <h5 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne" style="color:white;">
-                                <h3>Choose Your Theater</h3>
+                                <h3>Choose City</h3>
                             </button>
                         </h5>
                     </div>
@@ -75,7 +75,7 @@
                                 <div class="row">
                                     <div class="col-12" style="margin-top: 15px;width: 100%">
                                         <select class="custom-select custom-select-lg mb-3" v-model="selected">
-                                            <option selected value="0">Select Category</option>
+                                            <option selected value="0">Select City</option>
                                             <option v-for="cat in categories" v-bind:value="cat.id">{{cat.name}}</option>
                                         </select>
                                     </div>
@@ -98,7 +98,33 @@
                         <div class="card-body" style="padding:0">
                             <div class="container-fluid">
                                 <div class="row" style="margin-bpttom:10px;">
-                                    <div class="col-12" style="width: 100%;background-color: #FBEEE6">
+                                    <div class="col-12" style="height: 50px;text-align:center;margin:auto;background-color: #e0e5f2;">
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
+                                            data-interval="false" style="padding-top:10px">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <h1>Date</h1>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h1>Date</h1>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <h1>Date</h1>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only" style="background-color:orange">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                                data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only" style="background-color:orange">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" style="width: 100%;background-color: #FBEEE6;height: 50px;padding-top: 10px">
                                         <h1 style="color:orange;">Theater name</h1>
                                     </div>
                                     <div class="col-3" style="margin-top: 15px;width: 100%;text-align: center;margin: auto">
@@ -111,19 +137,19 @@
                                                     <h1>ENG/TH</h1>
                                                 </div>
                                                 <div class="col" style="width: 100%;height: 5vh;">
-                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                    <button class="button-showtime-active" style="width:100%;height: 100%;">13:50</button>
                                                 </div>
                                                 <div class="col" style="width: 100%;">
-                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                    <button class="button-showtime " style="width:100%;height: 100%;">13:50</button>
                                                 </div>
                                                 <div class="col" style="width: 100%;">
-                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                    <button class="button-showtime " style="width:100%;height: 100%;">13:50</button>
                                                 </div>
                                                 <div class="col" style="width: 100%;">
-                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                    <button class="button-showtime " style="width:100%;height: 100%;">13:50</button>
                                                 </div>
                                                 <div class="col" style="width: 100%;">
-                                                    <button class="button" style="width:100%;height: 100%;">13:50</button>
+                                                    <button class="button-showtime " style="width:100%;height: 100%;">13:50</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +177,109 @@
                                         <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
                                     </div>
                                     <div class="col-1" style="text-align:center;margin: auto">
-                                        <h4>F</h4>
+                                        <h4>D</h4>
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center"></div>
+                                    <div class="col-1" style="text-align:center;margin: auto">
+                                        <h4>C</h4>
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center"></div>
+                                    <div class="col-1" style="text-align:center;margin: auto">
+                                        <h4>B</h4>
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center">
+                                        <img src="poster/seat.png" class="seat">
+                                    </div>
+                                    <div class="col-1" style="text-align:center"></div>
+                                    <div class="col-1" style="text-align:center;margin: auto">
+                                        <h4>A</h4>
                                     </div>
                                     <div class="col-1" style="text-align:center">
                                         <img src="poster/seat.png" class="seat">
@@ -190,6 +318,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="card">
+                        <div class="card-header" id="headingFour" style="background-color:orange;">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour" style="color:white;">
+                                    <h3>Choose Your Type</h3>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample"
+                            style="margin-bottom:10px;">
+                            <div class="card-body" style="padding:0">
+                                <div class="container-fluid">
+                                    <div class="row" style="margin-bpttom:10px;">
+                                        <div class="col-12" style="height: 50px;text-align:center;margin:auto;">
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+
             </div>
         </div>
     </div>

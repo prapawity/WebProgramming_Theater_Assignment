@@ -378,3 +378,16 @@ input[type=text]:focus {
             transform: scale(1);
       }
 }
+.button-showtime {
+      color: #1e1f24;
+      border: 2px solid #064cb7;
+      line-height: 1;
+
+  }
+  .button-showtime-active {
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      background: #2f66cd;
+      background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);
+  }
