@@ -163,13 +163,13 @@ var vm = new Vue({
                 {
                     theater_name: 'Major Cineplex',
                     time: [
-                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                        '10:30', '11:20', "11:50", '13:20',
                     ],
                 },
                 {
                     theater_name: 'EGV',
                     time: [
-                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                        '10:30', '11:20', "11:50",  '14:00'
                     ],
                 },
 
@@ -207,13 +207,13 @@ var vm = new Vue({
                 {
                     theater_name: 'Major Cineplex',
                     time: [
-                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                         "11:50", '13:20', '14:00'
                     ],
                 },
                 {
                     theater_name: 'EGV',
                     time: [
-                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                         '14:00'
                     ],
                 },
 
@@ -455,10 +455,11 @@ var vm = new Vue({
         },
         seleccity: function () {
             for (let index = 0; index < this.theaters.length; index++) {
-                if (this.theaters[index].id_city.includes(this.city_id) > -1) {
+                if (this.theaters[index].id_city.localeCompare(this.city_id) == 0) {
                     this.theater_show = this.theaters[index];
                 }
             }
+            console.log(this.city_id)
         },
         loopcreate: function () {
             var lis = [];

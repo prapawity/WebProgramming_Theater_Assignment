@@ -124,10 +124,10 @@
                                     </div>
                                     <div class="col-12" v-for="theater_loop in theater_show.theater" style="padding:0">
                                         <div class="col-12" style="width: 100%;background-color: #FBEEE6;height: 50px;padding-top: 10px">
-                                            <h1 style="color:orange;">{{theater_loop.theater_name}}</h1>
+                                            <h1 style="color:#1e63af;">{{theater_loop.theater_name}}</h1>
                                         </div>
                                         <div class="col-3" style="margin-top: 15px;width: 100%;text-align: center;margin: auto;padding-top: 10px">
-                                            <img src="https://lh3.googleusercontent.com/XLD4P-TGDoLTj6eqSx8AbqCX0hLfmuyoBRDDmtV8wBZYRLIM5ZRePH2PdgBeLG17IKzI07mKeWB608rbbO0J3A=h59">
+                                            <img src="https://upload.wikimedia.org/wikipedia/th/0/01/Sf-ipad.png" style="width:30%">
                                         </div>
                                         <div class="card-body" style="border-top: 1px solid #c6c7c7;margin: 10px;">
                                             <div class="container-fluid" style="width: 100%">
@@ -138,7 +138,7 @@
                                                     <!-- <div class="col" style="width: 100%;height: 5vh;">
                                                         <button class="button-showtime-active" style="width:100%;height: 100%;">13:50</button>
                                                     </div> -->
-                                                    <div class="col" v-for="time in theater_loop.time" style="width: 100%;height: 5vh;">
+                                                    <div class="col-2" v-for="time in theater_loop.time" style="width: 100%;height: 5vh;text-align: left">
                                                         <button class="button-showtime" style="width:100%;height: 100%;"
                                                             v-on:click="selecwatchtime(time)">{{time}}</button>
                                                     </div>
