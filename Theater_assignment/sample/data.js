@@ -275,6 +275,16 @@ var vm = new Vue({
                 src: 'https://hdqwalls.com/download/dunkirk-2017-movie-4k-3840x2160.jpg',
                 id: 4,
                 class: ''
+            },
+            {
+                src: 'https://wallpaperaccess.com/full/37959.jpg',
+                id: 5,
+                class: ''
+            },
+            {
+                src: 'http://www.hdwallpapers.in/walls/doctor_strange_2016_movie_4k_5k-wide.jpg',
+                id: 6,
+                class: ''
             }
         ],
         city_id: 0,
