@@ -126,6 +126,9 @@ nav ul li a {
       padding: 5%;
 }
 
+.movie-card{
+      font-size: 18px;
+}
 @media(max-width: 960px) {
 
       .logo {
