@@ -1,14 +1,11 @@
 Vue.component('navbar', {
   template: `
   <div>
-  <nav style="z-index:2;text-align: right;">
+  <nav style="z-index:2;text-align: right;background-color:tranparent">
+  <a href="indextest.html">
       <img class="logo" style="width: auto;min-width: 10%; max-width: 15%;" src="poster/moviehub1kpx.png">
-          <ul style="width:100;margin-bottom:0">
-              <li><a href="#" style="color:orange">Home</a></li>
-              <li><a href="#" style="color:orange">About</a></li>
-              <li><a href="#" style="color:orange">Blog</a></li>
-              <li><a href="#" style="color:orange">Contact</a></li>
-              <li><a href="#" style="color:orange">Contact</a></li>
+      </a>
+          <ul style="width:100;margin-bottom:0;text-align:right">
               <li><button type='button' class="btn btn-success" data-toggle="modal" data-target="#popUpWindow">Sign in</button></li>
           </ul>
   </nav>

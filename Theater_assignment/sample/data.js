@@ -1,6 +1,7 @@
 var vm = new Vue({
     el: "#app1",
     data: {
+        money: 0,
         time: "",
         showstate: false,
         numberofseat: 0,
@@ -270,7 +271,7 @@ var vm = new Vue({
                 class: ''
             },
             {
-                src: 'http://hdqwalls.com/wallpapers/guardians-of-the-galaxy-volume-2-5k-4k.jpg',
+                src: 'https://hdqwalls.com/download/dunkirk-2017-movie-4k-3840x2160.jpg',
                 id: 4,
                 class: ''
             }
@@ -471,11 +472,13 @@ var vm = new Vue({
                 document.getElementById(index).src = "poster/ticket.png";
                 if (this.numberofseat < 40) {
                     this.numberofseat += 1;
+                    this.money += 200;
                 }
             } else {
                 document.getElementById(index).src = "poster/seat.png";
                 if (this.numberofseat > 0) {
                     this.numberofseat -= 1;
+                    this.money -= 200
                 }
             }
             if (index >= 1 && index <= 10) {
