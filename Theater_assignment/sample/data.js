@@ -2,6 +2,7 @@ var vm = new Vue({
     el: "#app1",
     data: {
         money: 0,
+        num_kid:0,num_parent:0,
         time: "",
         showstate: false,
         numberofseat: 0,
@@ -468,6 +469,7 @@ var vm = new Vue({
             return lis;
         },
         seat(index) {
+            console.log(index)
             if (document.getElementById(index).src.includes("poster/seat.png")) {
                 document.getElementById(index).src = "poster/ticket.png";
                 if (this.numberofseat < 40) {
@@ -482,18 +484,21 @@ var vm = new Vue({
                 }
             }
             if (index >= 1 && index <= 10) {
-                this.seat1[index - 1].status = !this.seat1[index - 1].status
+                this.seat1[index-1].status = !this.seat1[index-1].status
             } else if (index >= 11 && index <= 20) {
-                this.seat1[index - 1].status = !this.seat1[index - 1].status
+                this.seat2[index-11].status = !this.seat2[index-11].status
             } else if (index >= 21 && index <= 30) {
-                this.seat1[index - 1].status = !this.seat1[index - 1].status
-            } else if (index >= 31 && index <= 40) {
-                this.seat1[index - 1].status = !this.seat1[index - 1].status
+                this.seat3[index-21].status = !this.seat3[index-21].status
+            } else{
+                this.seat4[index-31].status = !this.seat4[index-31].status
             }
         },
         selecwatchtime(text){
             this.time = text;
             console.log(this.time)
+        },
+        seatcount(){
+
         }
 
 
@@ -514,6 +519,7 @@ var vm = new Vue({
             }
             this.showstate = true;
         },
+
     }
 
 });

@@ -6,7 +6,7 @@ Vue.component('navbar', {
       <img class="logo" style="width: auto;min-width: 10%; max-width: 15%;" src="poster/moviehub1kpx.png">
       </a>
           <ul style="width:100;margin-bottom:0;text-align:right">
-              <li><button type='button' class="btn btn-success" data-toggle="modal" data-target="#popUpWindow">Sign in</button></li>
+              <li><button type='button' class="btn btn-success" data-toggle="modal" data-target="#popUpWindow" style="background-color:orange;border-color: orange;">Sign in</button></li>
           </ul>
   </nav>
   <div class="modal fade" id="popUpWindow">

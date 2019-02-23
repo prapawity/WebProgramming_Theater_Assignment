@@ -33,8 +33,9 @@
         <div class="jumbotron" style="height: 200vh;z-index: 1;background-color: transparent">
             <!-- <video class="video-background" preload="true" muted="false" autoplay="true" loop="true"> -->
             <!-- <source src="../asset/capmarvel.mp4" type="video/mp4" /> -->
-            <iframe class="video-background" src="https://www.youtube.com/embed/Z1BCujX3pw8?" style="padding-top: 100vh" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="video-background" src="https://www.youtube.com/embed/Z1BCujX3pw8?" style="padding-top: 100vh"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
 
             <!-- </video> -->
         </div>
@@ -138,7 +139,8 @@
                                                         <button class="button-showtime-active" style="width:100%;height: 100%;">13:50</button>
                                                     </div> -->
                                                     <div class="col" v-for="time in theater_loop.time" style="width: 100%;height: 5vh;">
-                                                        <button class="button-showtime" style="width:100%;height: 100%;" v-on:click="selecwatchtime(time)">{{time}}</button>
+                                                        <button class="button-showtime" style="width:100%;height: 100%;"
+                                                            v-on:click="selecwatchtime(time)">{{time}}</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,9 +216,34 @@
                         <div class="card-body" style="padding:0">
                             <div class="container-fluid">
                                 <div class="row" style="margin-bpttom:10px;">
-                                    <div class="col-12" style="height: 50px;text-align:center;margin:auto;">
+                                    <div class="col-12" style="height: 50px;text-align:center;margin:auto;padding-top: 20px">
                                         <h1>{{numberofseat}}</h1>
                                     </div>
+                                    <div class="col-12" style="text-align:center;margin:auto;">
+                                        <img src="poster/kids.png" style="width:10%">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">-</button>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
+                                        <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em" readonly="readonly" :value="num_kid">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="">+</button>
+                                    </div>
+                                    <div class="col-12" style="text-align:center;margin:auto;">
+                                        <img src="poster/parents.png" style="width:10%">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">-</button>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
+                                        <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em" readonly="readonly" :value="num_parent">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">+</button>
+                                    </div>
+
 
                                 </div>
                             </div>
