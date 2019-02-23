@@ -1,6 +1,253 @@
 var vm = new Vue({
     el: "#app1",
     data: {
+        time: "",
+        showstate: false,
+        numberofseat: 0,
+        seat1: [{
+            id: 1,
+            status: false,
+        }, {
+            id: 2,
+            status: false,
+        }, {
+            id: 3,
+            status: false,
+        }, {
+            id: 4,
+            status: false,
+        }, {
+            id: 5,
+            status: false,
+        }, {
+            id: 6,
+            status: false,
+        }, {
+            id: 7,
+            status: false,
+        }, {
+            id: 8,
+            status: false,
+        }, {
+            id: 9,
+            status: false,
+        }, {
+            id: 10,
+            status: false,
+        }, ],
+        seat2: [{
+            id: 11,
+            status: false,
+        }, {
+            id: 12,
+            status: false,
+        }, {
+            id: 13,
+            status: false,
+        }, {
+            id: 14,
+            status: false,
+        }, {
+            id: 15,
+            status: false,
+        }, {
+            id: 16,
+            status: false,
+        }, {
+            id: 17,
+            status: false,
+        }, {
+            id: 18,
+            status: false,
+        }, {
+            id: 19,
+            status: false,
+        }, {
+            id: 20,
+            status: false,
+        }, ],
+        seat3: [{
+            id: 21,
+            status: false,
+        }, {
+            id: 22,
+            status: false,
+        }, {
+            id: 23,
+            status: false,
+        }, {
+            id: 24,
+            status: false,
+        }, {
+            id: 25,
+            status: false,
+        }, {
+            id: 26,
+            status: false,
+        }, {
+            id: 27,
+            status: false,
+        }, {
+            id: 28,
+            status: false,
+        }, {
+            id: 29,
+            status: false,
+        }, {
+            id: 30,
+            status: false,
+        }, ],
+        seat4: [{
+            id: 31,
+            status: false,
+        }, {
+            id: 32,
+            status: false,
+        }, {
+            id: 33,
+            status: false,
+        }, {
+            id: 34,
+            status: false,
+        }, {
+            id: 35,
+            status: false,
+        }, {
+            id: 36,
+            status: false,
+        }, {
+            id: 37,
+            status: false,
+        }, {
+            id: 38,
+            status: false,
+        }, {
+            id: 39,
+            status: false,
+        }, {
+            id: 40,
+            status: false,
+        }, ],
+        theaters: [{
+            id_city: 'Bangkok',
+            theater: [{
+                    theater_name: 'SF CINEMA',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'Major Cineplex',
+                    time: [
+                        '10:30', '11:20', "11:50", '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'EGV',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20',
+                    ],
+                },
+
+            ],
+        }, {
+            id_city: 'Chiangmai',
+            theater: [{
+                    theater_name: 'SF CINEMA',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'Major Cineplex',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'EGV',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+
+            ],
+        }, {
+            id_city: 'Chonburi',
+            theater: [{
+                    theater_name: 'SF CINEMA',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'Major Cineplex',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20',
+                    ],
+                },
+                {
+                    theater_name: 'EGV',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+
+            ],
+        }, {
+            id_city: 'Phuket',
+            theater: [{
+                    theater_name: 'SF CINEMA',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'Major Cineplex',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+                {
+                    theater_name: 'EGV',
+                    time: [
+                        '10:30', '11:20', "11:50", '13:20', '14:00'
+                    ],
+                },
+
+            ],
+        }, ],
+        theater_show: "",
+        date: [{
+                id: 'date-1',
+                text: "26 กุมภาพันธ์ 2562"
+            },
+            {
+                id: 'date-2',
+                text: "27 กุมภาพันธ์ 2562"
+            },
+            {
+                id: 'date-3',
+                text: "28 กุมภาพันธ์ 2562"
+            },
+            {
+                id: 'date-4',
+                text: "29 กุมภาพันธ์ 2562"
+            },
+        ],
+        city: [{
+                name: 'Bangkok',
+            },
+            {
+                name: 'Chiangmai',
+            },
+            {
+                name: 'Chonburi',
+            },
+            {
+                name: 'Phuket',
+            },
+        ],
         posterlist: [
             // {
             //     src: 'https://wallpapercave.com/wp/wp2505826.jpg',
@@ -28,6 +275,7 @@ var vm = new Vue({
                 class: ''
             }
         ],
+        city_id: 0,
         selected: 0,
         categories: [{
                 id: 1,
@@ -203,6 +451,48 @@ var vm = new Vue({
             this.selected = 0
 
         },
+        seleccity: function () {
+            for (let index = 0; index < this.theaters.length; index++) {
+                if (this.theaters[index].id_city.includes(this.city_id) > -1) {
+                    this.theater_show = this.theaters[index];
+                }
+            }
+        },
+        loopcreate: function () {
+            var lis = [];
+            for (let index = 0; index < this.theaters.length; index++) {
+                lis.push(this.theaters[index].theater);
+            }
+            console.log(lis)
+            return lis;
+        },
+        seat(index) {
+            if (document.getElementById(index).src.includes("poster/seat.png")) {
+                document.getElementById(index).src = "poster/ticket.png";
+                if (this.numberofseat < 40) {
+                    this.numberofseat += 1;
+                }
+            } else {
+                document.getElementById(index).src = "poster/seat.png";
+                if (this.numberofseat > 0) {
+                    this.numberofseat -= 1;
+                }
+            }
+            if (index >= 1 && index <= 10) {
+                this.seat1[index - 1].status = !this.seat1[index - 1].status
+            } else if (index >= 11 && index <= 20) {
+                this.seat1[index - 1].status = !this.seat1[index - 1].status
+            } else if (index >= 21 && index <= 30) {
+                this.seat1[index - 1].status = !this.seat1[index - 1].status
+            } else if (index >= 31 && index <= 40) {
+                this.seat1[index - 1].status = !this.seat1[index - 1].status
+            }
+        },
+        selecwatchtime(text){
+            this.time = text;
+            console.log(this.time)
+        }
+
 
 
     },
@@ -214,6 +504,13 @@ var vm = new Vue({
             if (val) {
                 this.search();
             }
-        }
-    },
+        },
+        city_id: function (val) {
+            if (val) {
+                this.seleccity();
+            }
+            this.showstate = true;
+        },
+    }
+
 });
