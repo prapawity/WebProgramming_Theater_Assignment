@@ -1,3 +1,28 @@
+localStorage.setItem('user', 'webpro@gmail.com');
+localStorage.setItem('pass', '1234');
+
+function signup(){
+    var userName = document.getElementById('username');
+    var passWord = document.getElementById('password');
+
+    localStorage.setItem('user', userName.value);
+    localStorage.setItem('pass', passWord.value);
+
+    alert('Register successful.');
+}
+function login() {
+    var storedName = localStorage.getItem('user');
+    var storedPass = localStorage.getItem('pass');
+
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+
+    if(username.value !== storedName || password.value !== storedPass){
+        alert('ERROR');
+    }else{
+        alert('Log in successful.');
+    }
+}
 var vm = new Vue({
     el: "#app1",
     data: {
