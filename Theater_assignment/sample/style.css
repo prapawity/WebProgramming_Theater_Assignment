@@ -81,7 +81,8 @@ nav .logo {
 
 
 nav.black ul {
-      background-color: black;
+      background-color: orange;
+      background: linear-gradient(135deg, orange 0%, black 100%);
       width: 100%;
 }
 
