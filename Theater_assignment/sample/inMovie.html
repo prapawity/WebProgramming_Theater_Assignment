@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div id="app1" style="background-image: url(http://www.hdwallpaperslife.com/wp-content/uploads/2018/11/brie_larson_as_captain_marvel_2.jpg);height: 100%;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;top: 100vh">
+    <div id="app1" style="background-image: url(http://www.wallpapermaiden.com/image/2019/02/17/carol-danvers-captain-marvel-artwork-30396.jpeg);height: 100%;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;top: 100vh">
         <navbar></navbar>
         <div class="jumbotron" style="height: 200vh;z-index: 1;background-color: transparent">
             <!-- <video class="video-background" preload="true" muted="false" autoplay="true" loop="true"> -->
@@ -55,7 +55,7 @@
                     <!-- <p class="desc-movie">Movie Studios: </p> -->
                 </div>
                 <div class="col-md-8" style="background-color: #323232;">
-                    <p class="desc-movie">{{movies[0].synopsis}}</p>
+                    <p class="desc-movie" v-html="movies[0].synopsis">{{movies[0].synopsis}}</p>
                 </div>
             </div>
         </div>
