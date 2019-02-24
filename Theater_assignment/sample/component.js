@@ -1,5 +1,5 @@
 Vue.component('navbar', {
-  template: `
+    template: `
   <div>
   <nav style="z-index:2;text-align: right;background-color:tranparent">
   <a href="indextest.html">

@@ -1,7 +1,7 @@
 localStorage.setItem('user', 'webpro@gmail.com');
 localStorage.setItem('pass', '1234');
 
-function signup(){
+function signup() {
     var userName = document.getElementById('username');
     var passWord = document.getElementById('password');
 
@@ -10,6 +10,7 @@ function signup(){
 
     alert('Register successful.');
 }
+
 function login() {
     var storedName = localStorage.getItem('user');
     var storedPass = localStorage.getItem('pass');
@@ -17,9 +18,9 @@ function login() {
     var username = document.getElementById('username');
     var password = document.getElementById('password');
 
-    if(username.value !== storedName || password.value !== storedPass){
+    if (username.value !== storedName || password.value !== storedPass) {
         alert('ERROR');
-    }else{
+    } else {
         alert('Log in successful.');
     }
 }
@@ -27,7 +28,8 @@ var vm = new Vue({
     el: "#app1",
     data: {
         money: 0,
-        num_kid:0,num_parent:0,
+        num_kid: 0,
+        num_parent: 0,
         time: "",
         showstate: false,
         numberofseat: 0,
@@ -194,7 +196,7 @@ var vm = new Vue({
                 {
                     theater_name: 'EGV',
                     time: [
-                        '10:30', '11:20', "11:50",  '14:00'
+                        '10:30', '11:20', "11:50", '14:00'
                     ],
                 },
 
@@ -232,13 +234,13 @@ var vm = new Vue({
                 {
                     theater_name: 'Major Cineplex',
                     time: [
-                         "11:50", '13:20', '14:00'
+                        "11:50", '13:20', '14:00'
                     ],
                 },
                 {
                     theater_name: 'EGV',
                     time: [
-                         '14:00'
+                        '14:00'
                     ],
                 },
 
@@ -520,20 +522,20 @@ var vm = new Vue({
                 }
             }
             if (index >= 1 && index <= 10) {
-                this.seat1[index-1].status = !this.seat1[index-1].status
+                this.seat1[index - 1].status = !this.seat1[index - 1].status
             } else if (index >= 11 && index <= 20) {
-                this.seat2[index-11].status = !this.seat2[index-11].status
+                this.seat2[index - 11].status = !this.seat2[index - 11].status
             } else if (index >= 21 && index <= 30) {
-                this.seat3[index-21].status = !this.seat3[index-21].status
-            } else{
-                this.seat4[index-31].status = !this.seat4[index-31].status
+                this.seat3[index - 21].status = !this.seat3[index - 21].status
+            } else {
+                this.seat4[index - 31].status = !this.seat4[index - 31].status
             }
         },
-        selecwatchtime(text){
+        selecwatchtime(text) {
             this.time = text;
             console.log(this.time)
         },
-        seatcount(){
+        seatcount() {
 
         }
 
