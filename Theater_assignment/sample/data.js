@@ -209,7 +209,7 @@ var vm = new Vue({
         baby_seat: 0,
         seat_data: JSON.parse(localStorage.getItem('seat')),
         money: 0,
-        time: "",
+        time: "00:00",
         showstate: false,
         numberofseat: 0,
         theaters: [{
@@ -221,13 +221,13 @@ var vm = new Vue({
                     ],
                 },
                 {
-                    theater_name: 'Major Cineplex',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '14:00'
                     ],
                 },
                 {
-                    theater_name: 'EGV',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '13:20',
                     ],
@@ -243,13 +243,13 @@ var vm = new Vue({
                     ],
                 },
                 {
-                    theater_name: 'Major Cineplex',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '13:20',
                     ],
                 },
                 {
-                    theater_name: 'EGV',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '14:00'
                     ],
@@ -265,13 +265,13 @@ var vm = new Vue({
                     ],
                 },
                 {
-                    theater_name: 'Major Cineplex',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '13:20',
                     ],
                 },
                 {
-                    theater_name: 'EGV',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '10:30', '11:20', "11:50", '13:20', '14:00'
                     ],
@@ -287,13 +287,13 @@ var vm = new Vue({
                     ],
                 },
                 {
-                    theater_name: 'Major Cineplex',
+                    theater_name: 'SF CINEMA',
                     time: [
                         "11:50", '13:20', '14:00'
                     ],
                 },
                 {
-                    theater_name: 'EGV',
+                    theater_name: 'SF CINEMA',
                     time: [
                         '14:00'
                     ],

@@ -1,1 +1,27 @@
-<a href="#" style="color:white;background-color: orange">Information</a>
+<div class="col-1" style="text-align:center;margin: auto">
+        <h4>C</h4>
+    </div> -->
+<div class="col-1" v-for="sofa in seat2" style="text-align:center">
+<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+</div>
+<div class="col-1" style="text-align:center"></div>
+<!-- <div class="col-1" style="text-align:center;margin: auto">
+        <h4>B</h4>
+    </div> -->
+<div class="col-1" v-for="sofa in seat3" style="text-align:center">
+<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+</div>
+<div class="col-1" style="text-align:center"></div>
+<!-- <div class="col-1" style="text-align:center;margin: auto">
+        <h4>A</h4>
+    </div> -->
+<div class="col-1" v-for="sofa in seat4" style="text-align:center">
+<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+</div>
+<div class="col-1" style="text-align:center"></div>
+<div class="col-1" style="text-align:center;margin: auto">
+</div>
+<div class="col-1" v-for="n in 10" style="text-align:center;padding-top: 10px;">
+<h4>{{n}}</h4>
+</div>
+<div class="col-1" style="text-align:center"></div>
