@@ -303,20 +303,21 @@
                                                     </div>
                                                     <div class="col-12 row" v-if="money > 0" style="width: 100%;padding: inherit;margin: auto;text-align: center;">
                                                         <div class="col-4" style="width: 100%;background-color: #F9E79F;">
-                                                            <a href="indextest.html">
+                                                            <a >
                                                                 <img src="poster/pay1.png" style="width: 70%;padding-top: 20px"
-                                                                    v-on:click="print_recip()">
+                                                                    v-on:click="print_recip(1)">
                                                             </a>
                                                         </div>
                                                         <div class="col-4" style="width: 100%;background-color: #F9E79F;">
-                                                            <a href="#">
-                                                                <img src="poster/pay2.png" style="width: 70%;padding-top: 20px">
+                                                            <a href="indextest.html">
+                                                                <img src="poster/pay2.png" style="width: 70%;padding-top: 20px" 
+                                                                v-on:click="print_recip(2)">
                                                             </a>
                                                         </div>
                                                         <div class="col-4" style="width: 100%;background-color: #F9E79F;">
-                                                            <a href="#">
+                                                            <a href="indextest.html">
                                                                 <img src="https://qr-generator.digio.co.th/static/media/promptpay.75db5c8f.jpg"
-                                                                    style="width: 100%;padding-top: 50px">
+                                                                    style="width: 100%;padding-top: 50px" v-on:click="print_recip(3)">
                                                             </a>
                                                         </div>
                                                     </div>

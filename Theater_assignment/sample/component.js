@@ -12,7 +12,7 @@ Vue.component('navbar', {
         </li>
         <li v-if="authen_state">
             <a href="information.html">
-                <h1 style="color:black;">Information</h1>
+                <h1 style="color:orange;">Information</h1>
             </a>
         </li>
     </ul>

@@ -201,6 +201,7 @@ function login() {
 var vm = new Vue({
     el: "#app1",
     data: {
+        pay_by: "",
         man_seat: 0,
         baby_seat: 0,
         authen_state: JSON.parse(localStorage.getItem("authen_state")),
@@ -625,18 +626,37 @@ var vm = new Vue({
                 }
             }
         },
-        print_recip() {
-            alert("This progess is done!");
-            localStorage.setItem('test', JSON.stringify("asd"));
-            var prtContent = document.getElementById("print_recip");
-            var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-            WinPrint.document.write(prtContent.innerHTML);
-            WinPrint.document.close();
-            WinPrint.focus();
-            WinPrint.print();
-            WinPrint.close();
+        print_recip(chk) {
+            if (chk == 1) this.pay_by = "Counter Theater"
+            else if (chk == 2) this.pay_by = "CreditCard"
+            else if (chk == 3) this.pay_by = "PromptPay"
+            var r = confirm("Confirm to finish");
+            if (r == true) {
+                this.save_data_recip();
+                alert("Progess is done!")
+            }
         },
-        
+        save_data_recip() {
+            var ans = ["Captain Marvel"];
+            var txt = ""
+            this.seat_data = JSON.parse(localStorage.getItem('seat'));
+            for (let index = 0; index < this.seat_data.length; index++) {
+                if (this.seat_data[index].status == true) {
+                    txt += this.seat_data[index].id + ", "
+                }
+            }
+            ans[1] = txt;
+            ans[2] = this.pay_by;
+            if (this.pay_by == "Counter Theater") ans[3] = "Inprogess"
+            else ans[3] = "Complete"
+            ans[3] = "SF CINEMA"
+            ans[4] = this.time
+            ans[5] = this.city_id
+            ans[6] = this.showdate();
+            localStorage.setItem('history_recipt', JSON.stringify(ans))
+
+        },
+
 
     },
     computed: {
