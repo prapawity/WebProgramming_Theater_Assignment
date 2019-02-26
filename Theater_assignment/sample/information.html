@@ -45,8 +45,8 @@
                 </div>
             </div>
             <br>
-            <table class="table">
-                <h2>History</h2>
+            <table class="table" v-if="show_history()">
+                <h2>History <button v-on:click="set_table()">Show History</button></h2>
                 <tr>
                     <td>ID</td>
                     <td>Movie</td>
@@ -57,10 +57,10 @@
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Captain Marvel</td>
-                    <td>B1, B2, B3</td>
+                    <td>{{infor_show[0]}}</td>
+                    <td>{{infor_show[1]}}</td>
                     <td>
-                        <div class="box green">Complete</div>
+                        <div class="box green">{{infor_show[3]}}</div>
                     </td>
                     <td>
                         <div class="dropdown show">
@@ -69,12 +69,12 @@
                             </a>
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">Email Ticket</a>
-                              <a class="dropdown-item" href="#">Print Ticket</a>
+                              <a class="dropdown-item" href="https://www.google.com/gmail/">Email Ticket</a>
+                              <a class="dropdown-item" v-on:click="print_recip()">Print Ticket</a>
                             </div>
                           </div>
                     </td>
-                    <td><button type="button" class="btn btn-danger">Refund</button></td>
+                    <td><button type="button" class="btn btn-danger" v-on:click="refund()"><a href="information.html">Refund</a></button></td>
                 </tr>
             </table>
         </div>

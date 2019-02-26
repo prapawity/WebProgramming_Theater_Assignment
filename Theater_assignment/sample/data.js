@@ -201,6 +201,7 @@ function login() {
 var vm = new Vue({
     el: "#app1",
     data: {
+        infor_show: "",
         pay_by: "",
         man_seat: 0,
         baby_seat: 0,
@@ -649,13 +650,187 @@ var vm = new Vue({
             ans[2] = this.pay_by;
             if (this.pay_by == "Counter Theater") ans[3] = "Inprogess"
             else ans[3] = "Complete"
-            ans[3] = "SF CINEMA"
-            ans[4] = this.time
-            ans[5] = this.city_id
-            ans[6] = this.showdate();
+            ans[4] = "SF CINEMA"
+            ans[5] = this.time
+            ans[6] = this.city_id
+            var daily = this.showdate();
+            ans[7] = daily;
             localStorage.setItem('history_recipt', JSON.stringify(ans))
+            this.set_table()
 
         },
+        refund() {
+            localStorage.removeItem('history_recipt')
+            var seat = [{
+                    id: "C1",
+                    status: false
+                },
+                {
+                    id: "C2",
+                    status: false
+                },
+                {
+                    id: "C3",
+                    status: false
+                },
+                {
+                    id: "C4",
+                    status: false
+                },
+                {
+                    id: "C5",
+                    status: false
+                },
+                {
+                    id: "C6",
+                    status: false
+                },
+                {
+                    id: "C7",
+                    status: false
+                },
+                {
+                    id: "C8",
+                    status: false
+                },
+                {
+                    id: "C9",
+                    status: false
+                },
+                {
+                    id: "C10",
+                    status: false
+                },
+                {
+                    id: "C11",
+                    status: false
+                },
+                {
+                    id: "C12",
+                    status: false
+                },
+                {
+                    id: "B1",
+                    status: false
+                },
+                {
+                    id: "B2",
+                    status: false
+                },
+                {
+                    id: "B3",
+                    status: false
+                },
+                {
+                    id: "B4",
+                    status: false
+                },
+                {
+                    id: "B5",
+                    status: false
+                },
+                {
+                    id: "B6",
+                    status: false
+                },
+                {
+                    id: "B7",
+                    status: false
+                },
+                {
+                    id: "B8",
+                    status: false
+                },
+                {
+                    id: "B9",
+                    status: false
+                },
+                {
+                    id: "B10",
+                    status: false
+                },
+                {
+                    id: "B11",
+                    status: false
+                },
+                {
+                    id: "B12",
+                    status: false
+                },
+                {
+                    id: "A1",
+                    status: false
+                },
+                {
+                    id: "A2",
+                    status: false
+                },
+                {
+                    id: "A3",
+                    status: false
+                },
+                {
+                    id: "A4",
+                    status: false
+                },
+                {
+                    id: "A5",
+                    status: false
+                },
+                {
+                    id: "A6",
+                    status: false
+                },
+                {
+                    id: "A7",
+                    status: false
+                },
+                {
+                    id: "A8",
+                    status: false
+                },
+                {
+                    id: "A9",
+                    status: false
+                },
+                {
+                    id: "A10",
+                    status: false
+                },
+                {
+                    id: "A11",
+                    status: false
+                },
+                {
+                    id: "A12",
+                    status: false
+                },
+
+            ]
+            localStorage.setItem('seat', JSON.stringify(seat));
+            this.set_table();
+            alert("Refund Seccess")
+
+        },
+        set_table(){
+            var text = JSON.parse(localStorage.getItem('history_recipt'))
+            this.infor_show = text;
+        },
+        chk_recip(){
+            if(localStorage.getItem('history_recipt') == null) return false
+            else return true
+        },
+        show_history(){
+            if(this.infor_show.length != 0){
+                this.set_table()
+                return true
+            }
+            else{
+                return false;
+            }
+        },print_recip(){
+            window.print()
+        }
 
 
     },

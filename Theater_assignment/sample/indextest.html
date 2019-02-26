@@ -40,12 +40,12 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> -->
             </ol>
-            <div class="carousel-inner" style="height:95vh;background-color: black">
+            <div class="carousel-inner" style="height:100vh;background-color: black">
                 <div class="carousel-item active" style="position:center">
                     <img src="http://www.hdnicewallpapers.com/Walls/Big/Hollywood%20Movies/Spider_Man_Into_the_Spider_Verse_Movie_4K_Wallpaper.jpg" style="height: 100%;width: 100%;">
                 </div>
                 <div class="carousel-item" v-for="poster in posterlist">
-                    <img :src="poster.src" style="width:100%;height: 100%;">
+                    <img :src="poster.src" style="width:100%;height: 100vh;">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -57,11 +57,11 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="container" style="background-color:#EAECEE;margin-top: 10px">
+        <div class="container" style="background-color:#EAECEE;margin-top: 20px">
             <div class="row">
                 <div class="col-6" style="text-align:center;margin-top: 15px;">
                     <!-- <button type="button" class="btn btn-light" style="width:100%">'</button> -->
-                    <select class="custom-select custom-select-lg mb-3" v-model="selected">
+                    <select class="custom-select custom-select-lg mb-3" v-model="selected" style="height:100%">
                         <option selected value="0">All</option>
                         <option v-for="cat in categories" v-bind:value="cat.id">{{cat.name}}</option>
                     </select>
