@@ -7,11 +7,10 @@ Vue.component('navbar', {
             </a>
             <ul style="width:100;margin-bottom:0;text-align:right">
                 <li v-if="!authen_state"> <button type='button' class="btn btn-success btn-lg" data-toggle="modal"
-                        data-target="#popUpWindow" style="background-color:orange;border-color: orange;color: black];">Sign
-                        in / Sign up</button>
+                        data-target="#popUpWindow" style="background-color:orange;border-color: orange;color: black];">LogIn/Register</button>
                 </li>
-                <li v-if="authen_state">
-                <a href="#"><h1 style="color:black;">Information</h1></a>
+                <li v-if="authen_state" style="margin-top: 10px;">
+                <a href="information.html"><h1 style="color:orange;display: inline-block">Admin</h1></a>
                 </li>
             </ul>
         </nav>
@@ -40,8 +39,7 @@ Vue.component('navbar', {
                     </div>
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button class="btn btn-primary btn-block btn-lg" onClick="signup()" style="margin-top: 5px;background-color:orange;border-color:orange">Sign
-                            up</button>
+                        <button class="btn btn-primary btn-block btn-lg" onClick="signup()" style="margin-top: 5px;background-color:orange;border-color:orange">Register</button>
                         <button class="btn btn-primary btn-block btn-lg" v-on:click="state_Authen()" style="background-color:black;border-color:black"
                             id="signIn">Sign In</button>
                     </div>
