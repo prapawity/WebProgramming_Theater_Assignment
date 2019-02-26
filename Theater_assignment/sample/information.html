@@ -34,19 +34,18 @@
         <div style="padding-top:10%;"></div>
         <div class="container" id="c2" style="background-color: #F5F5F5;">
             <br>
-            <div class="row">
+            <div class="row" style="background-color:orange">
                 <div class="col-md-5 align-self-start" style="padding-left:10%;">
                     <img src="profile.png" alt="profile"
                         style="border-radius: 50%;width: 200px;height: 200px; margin: 10px;">
                 </div>
                 <div class="col align-self-center">
-                    <h1 id="profile" style="display: inline;">Welcome!</h1><br>
-                    <h2 id="profile" style="margin-left: 5%;">Admin</h2>
+                    <h1 id="profile" style="display: inline;">Welcome! Our Member</h1><br>
                 </div>
             </div>
             <br>
             <table class="table" v-if="show_history()">
-                <h2>History <button v-on:click="set_table()">Show History</button></h2>
+                <h2>History <button v-on:click="set_table()" id="show_his">Show History</button></h2>
                 <tr>
                     <td>ID</td>
                     <td>Movie</td>
@@ -70,7 +69,7 @@
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <a class="dropdown-item" href="https://www.google.com/gmail/">Email Ticket</a>
-                              <a class="dropdown-item" v-on:click="print_recip()">Print Ticket</a>
+                              <a class="dropdown-item" href="#" v-on:click="print_recip()">Print Ticket</a>
                             </div>
                           </div>
                     </td>

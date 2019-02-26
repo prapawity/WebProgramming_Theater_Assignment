@@ -627,7 +627,7 @@ var vm = new Vue({
                 }
             }
         },
-        print_recip(chk) {
+        print_recip1(chk) {
             if (chk == 1) this.pay_by = "Counter Theater"
             else if (chk == 2) this.pay_by = "CreditCard"
             else if (chk == 3) this.pay_by = "PromptPay"
@@ -812,23 +812,33 @@ var vm = new Vue({
             alert("Refund Seccess")
 
         },
-        set_table(){
-            var text = JSON.parse(localStorage.getItem('history_recipt'))
-            this.infor_show = text;
+        set_table() {
+            if (document.getElementById("show_his").innerHTML == "Show History") {
+                document.getElementById("show_his").innerHTML = "Hide History"
+                var text = JSON.parse(localStorage.getItem('history_recipt'))
+                this.infor_show = text;
+            } else if (document.getElementById("show_his").innerHTML == "Hide History") {
+                document.getElementById("show_his").innerHTML = "Show History"
+                infor_show = [];
+            }
+
         },
-        chk_recip(){
-            if(localStorage.getItem('history_recipt') == null) return false
+        chk_recip() {
+            if (localStorage.getItem('history_recipt') == null) return false
             else return true
         },
-        show_history(){
-            if(this.infor_show.length != 0){
-                this.set_table()
+        show_history() {
+            if (this.infor_show.length != 0 && document.getElementById("show_his").innerHTML == "Hide History") {
+                if (document.getElementById("show_his").innerHTML == "Show History") {
+                    return false
+                }
                 return true
             }
             else{
-                return false;
+                return false
             }
-        },print_recip(){
+        },
+        print_recip() {
             window.print()
         }
 
