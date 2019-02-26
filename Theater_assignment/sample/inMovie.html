@@ -146,11 +146,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;border-top: 1px solid orange">
-                                        <a href="#collapseThree"><button type="button" class="btn btn-outline-dark"
-                                                style="width:100%;background: #2f66cd;background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);border-color: transparent;">Next</button>
-                                        </a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -207,9 +203,7 @@
                                         <h4>{{n}}</h4>
                                     </div>
                                     <div class="col-1" style="text-align:center"></div>
-                                    <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
-                                        <button type="button" class="btn btn-outline-dark">Confirm</button>
-                                    </div>
+
 
                                 </div>
                             </div>
@@ -302,7 +296,10 @@
                                                 <div class="row" style="margin-bpttom:10px;">
                                                     <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                                         <h1>Seat number</h1>
-                                                        <h1>loop_count</h1>
+                                                        <h3 v-for="seat in seat1" v-if="seat.status">A{{seat.id}}</h3>
+                                                        <h3 v-for="seat in seat2" v-if="seat.status">A{{seat.id}}</h3>
+                                                        <h3 v-for="seat in seat3" v-if="seat.status">A{{seat.id}}</h3>
+                                                        <h3 v-for="seat in seat4" v-if="seat.status">A{{seat.id}}</h3>
                                                     </div>
                                                     <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                                         <h1>Price</h1>
@@ -358,8 +355,7 @@
                                         <div class="container" style="background-color: white">
                                             <div class="row" style="margin-bpttom:10px;">
                                                 <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
-                                                    <h1>Seat number</h1>
-                                                    <h1>loop_count</h1>
+
                                                 </div>
                                                 <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                                     <h1>Price</h1>

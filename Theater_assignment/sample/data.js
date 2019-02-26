@@ -1,30 +1,64 @@
-localStorage.setItem('user', 'webpro@gmail.com');
-localStorage.setItem('pass', '1234');
+let user = ['admin']
+let pass = ['admin']
+localStorage.setItem('user', JSON.stringify(user));
+localStorage.setItem('pass', JSON.stringify(pass));
+let authen_state = false;
+localStorage.setItem("authen_state",JSON.stringify(authen_state));
+
+let seat_payment = [false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false,
+    false, false, false, false, false, false, false, false, false, false,
+]
+localStorage.setItem('seat_payment', JSON.stringify(seat_payment));
+// let User = {
+//     user,
+//     pass,
+//     seat,
+//     price,
+//     payment
+// }
 
 function signup() {
     var userName = document.getElementById('username');
     var passWord = document.getElementById('password');
 
-    localStorage.setItem('user', userName.value);
-    localStorage.setItem('pass', passWord.value);
+    user = JSON.parse(localStorage.getItem('user'))
+    pass = JSON.parse(localStorage.getItem('pass'))
+    user.push(userName)
+    pass.push(passWord)
+    username = document.getElementById('username').value = "";
+    password = document.getElementById('password').value = "";
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('pass', JSON.stringify(pass));
 
     alert('Register successful.');
 }
 
 function login() {
-    var storedName = localStorage.getItem('user');
-    var storedPass = localStorage.getItem('pass');
+    var storedName = JSON.parse(localStorage.getItem('user'));
+    var storedPass = JSON.parse(localStorage.getItem('pass'));
+    var authen = false
 
     var username = document.getElementById('username');
     var password = document.getElementById('password');
 
-    if (username.value !== storedName || password.value !== storedPass) {
+    for (let index = 0; index < storedName.length; index++) {
+
+        if (username.value == storedName[index] || password.value == storedPass[index]) {
+
+            $('#popUpWindow').modal('hide')
+            // document.getElementById("popUpWindow").className = "modal fade";
+            $('.modal-backdrop').remove();
+            authen = true;
+            alert('Log in successful.');
+            break;
+
+        }
+    }
+
+    if (authen == false) {
         alert('ERROR');
-    } else {
-        $('#popUpWindow').modal('hide')
-        // document.getElementById("popUpWindow").className = "modal fade";
-        $('.modal-backdrop').remove();
-        alert('Log in successful.');
     }
 }
 var vm = new Vue({
@@ -510,7 +544,7 @@ var vm = new Vue({
             return lis;
         },
         seat(index) {
-            console.log(index)
+            var seat_authen = JSON.parse(localStorage.getItem('seat_payment'));
             if (document.getElementById(index).src.includes("poster/seat.png")) {
                 document.getElementById(index).src = "poster/ticket.png";
                 if (this.numberofseat < 40) {
