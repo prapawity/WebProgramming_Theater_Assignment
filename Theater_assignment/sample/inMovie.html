@@ -166,15 +166,15 @@
                                         <img src="poster/screen.svg" style="width:100%;">
                                         <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
                                     </div>
-                                    <div class="col-1" >
+                                    <div class="col-1">
                                         <div class="row" style="text-align:center;width: 100%;height: 100%;">
-                                            <div class="col-12" style="margin: auto;padding-top: 5px">
+                                            <div class="col-12" style="padding-top: 5px">
                                                 <h4>C</h4>
                                             </div>
-                                            <div class="col-12" style="margin: auto;padding-top: 5px">
+                                            <div class="col-12" style="padding-top: 5px">
                                                 <h4>B</h4>
                                             </div>
-                                            <div class="col-12" style="margin: auto;padding-top: 5px">
+                                            <div class="col-12" style="padding-top: 5px">
                                                 <h4>A</h4>
                                             </div>
 
@@ -186,8 +186,10 @@
                                                 v-on:click="seat(sofa.id)">
                                             <img v-else src="poster/ticket.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
                                         </div>
+                                        <div class="col-1" v-for="n in 12" style="text-align: center;width: 100%;height: 100%;padding-top: 10px">
+                                            <h2>{{n}}</h2>
+                                        </div>
                                     </div>
-                                    <div class="col-1" style="text-align:center;width: 100%;height: 100%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +216,8 @@
                                         <img src="poster/kids.png" style="width:10%">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_kids(-1)">-</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_kids(-1)">-</button>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
                                         <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
@@ -222,20 +225,22 @@
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
                                         <button type="button" class="btn btn-outline-warning" style="height: 100%;"
-                                        v-on:click="edit_Seat_plus_kids(1)">+</button>
+                                            v-on:click="edit_Seat_plus_kids(1)">+</button>
                                     </div>
                                     <div class="col-12" style="text-align:center;margin:auto;">
                                         <img src="poster/parents.png" style="width:10%">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_man(-1)">-</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_man(-1)">-</button>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
                                         <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
                                             readonly="readonly" :value="man_seat">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_man(1)">+</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_man(1)">+</button>
                                     </div>
 
 
@@ -255,14 +260,34 @@
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                         <div class="card-body" style="padding:0;">
-                            <div class="container" style="background-color: red">
+                            <div class="container" style="background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);">
                                 <div class="row" style="margin-bpttom:10px;">
                                     <div class="col-12" style="text-align:center;padding-top: 20px;padding-bottom: 10px;">
                                         <img src="poster/receipt.png" style="width:10%;height: auto">
                                     </div>
-                                    <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
-                                        <h1>{{movies[0].name.en}}</h1>
-                                        <h2>{{movies[0].name.th}}</h2>
+                                    <div class="col-4" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
+                                        <img src="../sample/poster/captain_marvel.jpg" alt="Captain marvel" style="width: 300px;margin: 5%;">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12" style="margin-top: 20px;width: 100%;background-color: yellow;padding: 10px;padding-bottom: 20px;">
+                                                        <h1>{{movies[0].name.en+"("+movies[0].name.th+")"}}</h1>
+                                                    </div>
+                                                    <div class="col-12" style="width: 100%;background-color: #F9E79F">
+                                                        <h2 style="margin-top:10px;">{{showdate()}}</h2>
+                                                        <h3>{{time}}</h3>
+                                                        <h3>Seat NO:
+                                                            <span v-for="sofa in seat_data" style="font: size 2em;">
+                                                                <span v-if="sofa.status">{{sofa.id+", "}}</span>
+
+                                                            </span>
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                         <h1>Theater</h1>

@@ -1,145 +1,145 @@
 let seat = [{
-        id: 1,
+        id: "C1",
         status: false
     },
     {
-        id: 2,
+        id: "C2",
         status: false
     },
     {
-        id: 3,
+        id: "C3",
         status: false
     },
     {
-        id: 4,
+        id: "C4",
         status: false
     },
     {
-        id: 5,
+        id: "C5",
         status: false
     },
     {
-        id: 6,
+        id: "C6",
         status: false
     },
     {
-        id: 7,
+        id: "C7",
         status: false
     },
     {
-        id: 8,
+        id: "C8",
         status: false
     },
     {
-        id: 9,
+        id: "C9",
         status: false
     },
     {
-        id: 10,
+        id: "C10",
         status: false
     },
     {
-        id: 11,
+        id: "C11",
         status: false
     },
     {
-        id: 12,
+        id: "C12",
         status: false
     },
     {
-        id: 13,
+        id: "B1",
         status: false
     },
     {
-        id: 14,
+        id: "B2",
         status: false
     },
     {
-        id: 15,
+        id: "B3",
         status: false
     },
     {
-        id: 16,
+        id: "B4",
         status: false
     },
     {
-        id: 17,
+        id: "B5",
         status: false
     },
     {
-        id: 18,
+        id: "B6",
         status: false
     },
     {
-        id: 19,
+        id: "B7",
         status: false
     },
     {
-        id: 20,
+        id: "B8",
         status: false
     },
     {
-        id: 21,
+        id: "B9",
         status: false
     },
     {
-        id: 22,
+        id: "B10",
         status: false
     },
     {
-        id: 23,
+        id: "B11",
         status: false
     },
     {
-        id: 24,
+        id: "B12",
         status: false
     },
     {
-        id: 25,
+        id: "A1",
         status: false
     },
     {
-        id: 26,
+        id: "A2",
         status: false
     },
     {
-        id: 27,
+        id: "A3",
         status: false
     },
     {
-        id: 28,
+        id: "A4",
         status: false
     },
     {
-        id: 29,
+        id: "A5",
         status: false
     },
     {
-        id: 30,
+        id: "A6",
         status: false
     },
     {
-        id: 31,
+        id: "A7",
         status: false
     },
     {
-        id: 32,
+        id: "A8",
         status: false
     },
     {
-        id: 33,
+        id: "A9",
         status: false
     },
     {
-        id: 34,
+        id: "A10",
         status: false
     },
     {
-        id: 35,
+        id: "A11",
         status: false
     },
     {
-        id: 36,
+        id: "A12",
         status: false
     },
 
@@ -576,15 +576,18 @@ var vm = new Vue({
                     this.money -= 200
                 }
             }
+            for (let indexs = 0; indexs < this.seat_data.length; indexs++) {
+                if (this.seat_data[indexs].id == index) {
+                    this.seat_data[indexs].status = !this.seat_data[indexs].status
+                }
 
-            this.seat_data[index - 1].status = !this.seat_data[index - 1].status
+            }
             localStorage.setItem('seat', JSON.stringify(this.seat_data));
             this.man_seat = this.numberofseat
 
         },
         selecwatchtime(text) {
             this.time = text;
-            console.log(this.time)
         },
         seatcount() {
 
