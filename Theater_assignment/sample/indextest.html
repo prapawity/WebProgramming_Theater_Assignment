@@ -11,24 +11,25 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </head>
 
 <body onload="myFunction()">
-    <div style="position:fixed;width:100%;height:100vh;background-color: orange;z-index: 20;" id="loader" >
+    <div style="position:fixed;width:100%;height:100vh;background-color: orange;z-index: 20;" id="loader">
         <div class="frame">
-            <div class="center" >
+            <div class="center">
                 <div class="dot-1"></div>
                 <div class="dot-2"></div>
                 <div class="dot-3"></div>
             </div>
         </div>
     </div>
-    <div id="app1" style="background-image: url('./poster/bg.jpg');height: 100%;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover">
+    <div id="app1"
+        style="background-image: url('./poster/bg.jpg');height: 100%;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover">
         <navbar></navbar>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 100vh;">
             <ol class="carousel-indicators" style="opacity: 0">
@@ -42,7 +43,8 @@
             </ol>
             <div class="carousel-inner" style="height:95vh;background-color: black">
                 <div class="carousel-item active" style="position:center">
-                    <img src="http://www.hdnicewallpapers.com/Walls/Big/Hollywood%20Movies/Spider_Man_Into_the_Spider_Verse_Movie_4K_Wallpaper.jpg" style="height: 100%;width: 100%;">
+                    <img src="http://www.hdnicewallpapers.com/Walls/Big/Hollywood%20Movies/Spider_Man_Into_the_Spider_Verse_Movie_4K_Wallpaper.jpg"
+                        style="height: 100%;width: 100%;">
                 </div>
                 <div class="carousel-item" v-for="poster in posterlist">
                     <img :src="poster.src" style="width:100%;height: 100%;">
@@ -68,7 +70,8 @@
                 </div>
                 <div class="col-6" style="text-align:right;padding-top: 15px;">
                     <input type="text" name="search" placeholder="Search.." style="height:5vh" id="search">
-                    <button type="button" style="height:5vh;margin-left: -5px" v-on:click="search2"><i class="fa fa-search"></i></button>
+                    <button type="button" style="height:5vh;margin-left: -5px" v-on:click="search2"><i
+                            class="fa fa-search"></i></button>
                 </div>
             </div>
         </div>
