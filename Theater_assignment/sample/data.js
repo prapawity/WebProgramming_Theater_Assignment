@@ -1,22 +1,179 @@
+let seat = [{
+        id: 1,
+        status: false
+    },
+    {
+        id: 2,
+        status: false
+    },
+    {
+        id: 3,
+        status: false
+    },
+    {
+        id: 4,
+        status: false
+    },
+    {
+        id: 5,
+        status: false
+    },
+    {
+        id: 6,
+        status: false
+    },
+    {
+        id: 7,
+        status: false
+    },
+    {
+        id: 8,
+        status: false
+    },
+    {
+        id: 9,
+        status: false
+    },
+    {
+        id: 10,
+        status: false
+    },
+    {
+        id: 11,
+        status: false
+    },
+    {
+        id: 12,
+        status: false
+    },
+    {
+        id: 13,
+        status: false
+    },
+    {
+        id: 14,
+        status: false
+    },
+    {
+        id: 15,
+        status: false
+    },
+    {
+        id: 16,
+        status: false
+    },
+    {
+        id: 17,
+        status: false
+    },
+    {
+        id: 18,
+        status: false
+    },
+    {
+        id: 19,
+        status: false
+    },
+    {
+        id: 20,
+        status: false
+    },
+    {
+        id: 21,
+        status: false
+    },
+    {
+        id: 22,
+        status: false
+    },
+    {
+        id: 23,
+        status: false
+    },
+    {
+        id: 24,
+        status: false
+    },
+    {
+        id: 25,
+        status: false
+    },
+    {
+        id: 26,
+        status: false
+    },
+    {
+        id: 27,
+        status: false
+    },
+    {
+        id: 28,
+        status: false
+    },
+    {
+        id: 29,
+        status: false
+    },
+    {
+        id: 30,
+        status: false
+    },
+    {
+        id: 31,
+        status: false
+    },
+    {
+        id: 32,
+        status: false
+    },
+    {
+        id: 33,
+        status: false
+    },
+    {
+        id: 34,
+        status: false
+    },
+    {
+        id: 35,
+        status: false
+    },
+    {
+        id: 36,
+        status: false
+    },
+    {
+        id: 37,
+        status: false
+    },
+    {
+        id: 38,
+        status: false
+    },
+    {
+        id: 39,
+        status: false
+    },
+    {
+        id: 40,
+        status: false
+    },
+
+]
+
 let user = ['admin']
 let pass = ['admin']
 localStorage.setItem('user', JSON.stringify(user));
 localStorage.setItem('pass', JSON.stringify(pass));
 let authen_state = false;
-localStorage.setItem("authen_state",JSON.stringify(authen_state));
-
-let seat_payment = [false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false,
-    false, false, false, false, false, false, false, false, false, false,
-]
-localStorage.setItem('seat_payment', JSON.stringify(seat_payment));
+localStorage.setItem("authen_state", JSON.stringify(authen_state));
+localStorage.setItem('seat', JSON.stringify(seat));
 // let User = {
 //     user,
 //     pass,
 //     seat,
 //     price,
-//     payment
+//     payment,
 // }
 
 function signup() {
@@ -64,136 +221,13 @@ function login() {
 var vm = new Vue({
     el: "#app1",
     data: {
+        seat_data: localStorage.getItem('seat'),
         money: 0,
         num_kid: 0,
         num_parent: 0,
         time: "",
         showstate: false,
         numberofseat: 0,
-        seat1: [{
-            id: 1,
-            status: false,
-        }, {
-            id: 2,
-            status: false,
-        }, {
-            id: 3,
-            status: false,
-        }, {
-            id: 4,
-            status: false,
-        }, {
-            id: 5,
-            status: false,
-        }, {
-            id: 6,
-            status: false,
-        }, {
-            id: 7,
-            status: false,
-        }, {
-            id: 8,
-            status: false,
-        }, {
-            id: 9,
-            status: false,
-        }, {
-            id: 10,
-            status: false,
-        }, ],
-        seat2: [{
-            id: 11,
-            status: false,
-        }, {
-            id: 12,
-            status: false,
-        }, {
-            id: 13,
-            status: false,
-        }, {
-            id: 14,
-            status: false,
-        }, {
-            id: 15,
-            status: false,
-        }, {
-            id: 16,
-            status: false,
-        }, {
-            id: 17,
-            status: false,
-        }, {
-            id: 18,
-            status: false,
-        }, {
-            id: 19,
-            status: false,
-        }, {
-            id: 20,
-            status: false,
-        }, ],
-        seat3: [{
-            id: 21,
-            status: false,
-        }, {
-            id: 22,
-            status: false,
-        }, {
-            id: 23,
-            status: false,
-        }, {
-            id: 24,
-            status: false,
-        }, {
-            id: 25,
-            status: false,
-        }, {
-            id: 26,
-            status: false,
-        }, {
-            id: 27,
-            status: false,
-        }, {
-            id: 28,
-            status: false,
-        }, {
-            id: 29,
-            status: false,
-        }, {
-            id: 30,
-            status: false,
-        }, ],
-        seat4: [{
-            id: 31,
-            status: false,
-        }, {
-            id: 32,
-            status: false,
-        }, {
-            id: 33,
-            status: false,
-        }, {
-            id: 34,
-            status: false,
-        }, {
-            id: 35,
-            status: false,
-        }, {
-            id: 36,
-            status: false,
-        }, {
-            id: 37,
-            status: false,
-        }, {
-            id: 38,
-            status: false,
-        }, {
-            id: 39,
-            status: false,
-        }, {
-            id: 40,
-            status: false,
-        }, ],
         theaters: [{
             id_city: 'Bangkok',
             theater: [{
@@ -544,7 +578,7 @@ var vm = new Vue({
             return lis;
         },
         seat(index) {
-            var seat_authen = JSON.parse(localStorage.getItem('seat_payment'));
+            this.seat_data = JSON.parse(localStorage.getItem('seat'));
             if (document.getElementById(index).src.includes("poster/seat.png")) {
                 document.getElementById(index).src = "poster/ticket.png";
                 if (this.numberofseat < 40) {
@@ -558,15 +592,9 @@ var vm = new Vue({
                     this.money -= 200
                 }
             }
-            if (index >= 1 && index <= 10) {
-                this.seat1[index - 1].status = !this.seat1[index - 1].status
-            } else if (index >= 11 && index <= 20) {
-                this.seat2[index - 11].status = !this.seat2[index - 11].status
-            } else if (index >= 21 && index <= 30) {
-                this.seat3[index - 21].status = !this.seat3[index - 21].status
-            } else {
-                this.seat4[index - 31].status = !this.seat4[index - 31].status
-            }
+
+            this.seat_data[index - 1].status = !this.seat_data[index - 1].status
+            localStorage.setItem('seat', JSON.stringify(this.seat_data));
         },
         selecwatchtime(text) {
             this.time = text;
@@ -574,6 +602,20 @@ var vm = new Vue({
         },
         seatcount() {
 
+        },
+        showdate() {
+            var date_id = document.getElementsByClassName("carousel-item active")[0].id
+            if (date_id == "date-0") {
+                return "25 กุมภาพันธ์ 2562"
+            } else if (date_id == "date-1") {
+                return "26 กุมภาพันธ์ 2562"
+            } else if (date_id == "date-2") {
+                return "27 กุมภาพันธ์ 2562"
+            } else if (date_id == "date-3") {
+                return "28 กุมภาพันธ์ 2562"
+            } else if (date_id == "date-4") {
+                return "29 กุมภาพันธ์ 2562"
+            }
         }
 
 

@@ -135,9 +135,6 @@
                                                     <div class="col-12" style="width: 100%">
                                                         <h1>ENG/TH</h1>
                                                     </div>
-                                                    <!-- <div class="col" style="width: 100%;height: 5vh;">
-                                                        <button class="button-showtime-active" style="width:100%;height: 100%;">13:50</button>
-                                                    </div> -->
                                                     <div class="col-2" v-for="time in theater_loop.time" style="width: 100%;height: 5vh;text-align: left">
                                                         <button class="button-showtime" style="width:100%;height: 100%;"
                                                             v-on:click="selecwatchtime(time)">{{time}}</button>
@@ -169,40 +166,33 @@
                                         <img src="poster/screen.svg" style="width:100%;">
                                         <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
                                     </div>
-                                    <div class="col-1" style="text-align:center;margin: auto">
-                                        <h4>D</h4>
+                                    <div class="col-1" style="text-align:center;width: 100%;height: 100%;">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4>D</h4>
+                                            </div>
+                                            <div class="col-12">
+                                                <h4>C</h4>
+                                            </div>
+                                            <div class="col-12">
+                                                <h4>B</h4>
+                                            </div>
+                                            <div class="col-12">
+                                                <h4>A</h4>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <div class="col-1" v-for="sofa in seat1" style="text-align:center">
-                                        <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+                                    <div class="col-10 row">
+                                        <div class="col-1" v-for="sofa in seat_data" style="text-align:center">
+                                            <img v-if="!sofa.status" src="poster/seat.png" :id="sofa.id" class="seat"
+                                                v-on:click="seat(sofa.id)">
+                                            <img v-if="sofa.status" src="poster/ticket.png" :id="sofa.id" class="seat"
+                                                v-on:click="seat(sofa.id)">
+                                        </div>
                                     </div>
-                                    <div class="col-1" style="text-align:center"></div>
-                                    <div class="col-1" style="text-align:center;margin: auto">
-                                        <h4>C</h4>
-                                    </div>
-                                    <div class="col-1" v-for="sofa in seat2" style="text-align:center">
-                                        <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
-                                    </div>
-                                    <div class="col-1" style="text-align:center"></div>
-                                    <div class="col-1" style="text-align:center;margin: auto">
-                                        <h4>B</h4>
-                                    </div>
-                                    <div class="col-1" v-for="sofa in seat3" style="text-align:center">
-                                        <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
-                                    </div>
-                                    <div class="col-1" style="text-align:center"></div>
-                                    <div class="col-1" style="text-align:center;margin: auto">
-                                        <h4>A</h4>
-                                    </div>
-                                    <div class="col-1" v-for="sofa in seat4" style="text-align:center">
-                                        <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
-                                    </div>
-                                    <div class="col-1" style="text-align:center"></div>
-                                    <div class="col-1" style="text-align:center;margin: auto">
-                                    </div>
-                                    <div class="col-1" v-for="n in 10" style="text-align:center;padding-top: 10px;">
-                                        <h4>{{n}}</h4>
-                                    </div>
-                                    <div class="col-1" style="text-align:center"></div>
+                                    <div class="col-1" style="text-align:center;width: 100%;height: 100%;"></div>
+
 
 
                                 </div>
@@ -296,10 +286,10 @@
                                                 <div class="row" style="margin-bpttom:10px;">
                                                     <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                                         <h1>Seat number</h1>
-                                                        <h3 v-for="seat in seat1" v-if="seat.status">A{{seat.id}}</h3>
+                                                        <!-- <h3 v-for="seat in seat1" v-if="seat.status">A{{seat.id}}</h3>
                                                         <h3 v-for="seat in seat2" v-if="seat.status">A{{seat.id}}</h3>
                                                         <h3 v-for="seat in seat3" v-if="seat.status">A{{seat.id}}</h3>
-                                                        <h3 v-for="seat in seat4" v-if="seat.status">A{{seat.id}}</h3>
+                                                        <h3 v-for="seat in seat4" v-if="seat.status">A{{seat.id}}</h3> -->
                                                     </div>
                                                     <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
                                                         <h1>Price</h1>
@@ -347,7 +337,7 @@
                                     <h2>theater_name</h2>
                                 </div>
                                 <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
-                                    <h2>date</h2>
+                                    <h2>{{showdate()}}</h2>
                                     <h2>time</h2>
                                 </div>
                                 <div class="col-12" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
