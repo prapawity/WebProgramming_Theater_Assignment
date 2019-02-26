@@ -134,7 +134,25 @@ nav ul li a {
 .login-form {
       height: 30px;
 }
-
+.label-login{
+      display: -webkit-box;
+}
+.box{
+      width:100px;
+      height:30px;
+      text-align: center;
+      border-radius: 8%;
+}
+.green{
+      background-color: #2ECC71;
+}
+#profile{
+      font-size: 30px;
+}
+#c2{
+      font-size: 18px;
+      height: 500px;
+}
 @media(max-width: 960px) {
       .logo {
             position: fixed;

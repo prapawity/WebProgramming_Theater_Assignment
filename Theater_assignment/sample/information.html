@@ -11,8 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="main.js"></script>
@@ -28,28 +28,37 @@
             </div>
         </div>
     </div>
-    <div id="app1" style="background-image: url('./poster/bg.jpg');height: -webkit-fill-available;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover">
+    <div id="app1"
+        style="background-image: url('./poster/bg.jpg');height: -webkit-fill-available;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover">
         <navbar></navbar>
         <div style="padding-top:10%;"></div>
-        <div class="container" style="background-color: #F5F5F5;">
+        <div class="container" id="c2" style="background-color: #F5F5F5;">
             <br>
             <div class="row">
                 <div class="col-md-5 align-self-start" style="padding-left:10%;">
-                    <img src="poster/profile.jpg" alt="profile" style="border-radius: 50%;width: 200px;height: 200px; margin: 10px;">
+                    <img src="profile.png" alt="profile"
+                        style="border-radius: 50%;width: 200px;height: 200px; margin: 10px;">
                 </div>
                 <div class="col align-self-center">
                     <h1 id="profile" style="display: inline;">Welcome!</h1><br>
-                    <h2 id="profile" style="margin-left: 5%;">Kawisara Bunyen</h2>
+                    <h2 id="profile" style="margin-left: 5%;">Admin</h2>
                 </div>
             </div>
             <br>
             <table class="table">
                 <h2>History</h2>
                 <tr>
+                    <td>ID</td>
+                    <td>Movie</td>
+                    <td>Seat</td>
+                    <td>Status</td>
+                    <td>Ticket</td>
+                    <td>Refund</td>
+                </tr>
+                <tr>
                     <td>1</td>
-                    <td>Friend Zone</td>
+                    <td>Captain Marvel</td>
                     <td>B1, B2, B3</td>
-                    <td>Credit Card</td>
                     <td>
                         <div class="box green">Complete</div>
                     </td>

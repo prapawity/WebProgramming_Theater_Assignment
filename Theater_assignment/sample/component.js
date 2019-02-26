@@ -7,12 +7,11 @@ Vue.component('navbar', {
     </a>
     <ul style="width:100;margin-bottom:0;text-align:right">
         <li v-if="!authen_state"> <button type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="#popUpWindow"
-                style="background-color:orange;border-color: orange;color: black;" v-on:click="set_local()">Sign
-                in / Sign up</button>
+                style="background-color:orange;border-color: orange;color: black;" v-on:click="set_local()">LogIn / Register</button>
         </li>
         <li v-if="authen_state">
             <a href="information.html">
-                <h1 style="color:orange;">Information</h1>
+                <h1 style="color:orange;">Profile</h1>
             </a>
         </li>
     </ul>
@@ -30,10 +29,10 @@ Vue.component('navbar', {
                         <div class="form-sign-in">
                             <form role="form" style="width:100%;">
                                 <div class="form-group" style="padding-top: 3%;">
-                                    <label>Email address</label>
+                                    <label class="label-login">Email address</label>
                                     <input type="email" class="form-control" style="height: 30px;font-size:14px;"
                                         placeholder="Email" id="username" />
-                                    <label>Password</label>
+                                    <label class="label-login">Password</label>
                                     <input id="password" type="password" class="form-control" style="height:30px;font-size:14px;"
                                         placeholder="Password" />
                                 </div>
@@ -42,10 +41,9 @@ Vue.component('navbar', {
                     </div>
                     <!-- footer -->
                     <div class="modal-footer">
-                        <button class="btn btn-primary btn-block btn-lg" onClick="signup()" style="margin-top: 5px;background-color:orange;border-color:orange">Sign
-                            up</button>
+                        <button class="btn btn-primary btn-block btn-lg" onClick="signup()" style="margin-top: 5px;background-color:orange;border-color:orange">Register</button>
                         <button class="btn btn-primary btn-block btn-lg" v-on:click="state_Authen()" style="background-color:black;border-color:black"
-                            id="signIn">Sign In</button>
+                            id="signIn">Log In</button>
                     </div>
     
                 </div>
