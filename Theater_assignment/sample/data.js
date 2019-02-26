@@ -1,168 +1,162 @@
-let seat = [{
-        id: "C1",
-        status: false
-    },
-    {
-        id: "C2",
-        status: false
-    },
-    {
-        id: "C3",
-        status: false
-    },
-    {
-        id: "C4",
-        status: false
-    },
-    {
-        id: "C5",
-        status: false
-    },
-    {
-        id: "C6",
-        status: false
-    },
-    {
-        id: "C7",
-        status: false
-    },
-    {
-        id: "C8",
-        status: false
-    },
-    {
-        id: "C9",
-        status: false
-    },
-    {
-        id: "C10",
-        status: false
-    },
-    {
-        id: "C11",
-        status: false
-    },
-    {
-        id: "C12",
-        status: false
-    },
-    {
-        id: "B1",
-        status: false
-    },
-    {
-        id: "B2",
-        status: false
-    },
-    {
-        id: "B3",
-        status: false
-    },
-    {
-        id: "B4",
-        status: false
-    },
-    {
-        id: "B5",
-        status: false
-    },
-    {
-        id: "B6",
-        status: false
-    },
-    {
-        id: "B7",
-        status: false
-    },
-    {
-        id: "B8",
-        status: false
-    },
-    {
-        id: "B9",
-        status: false
-    },
-    {
-        id: "B10",
-        status: false
-    },
-    {
-        id: "B11",
-        status: false
-    },
-    {
-        id: "B12",
-        status: false
-    },
-    {
-        id: "A1",
-        status: false
-    },
-    {
-        id: "A2",
-        status: false
-    },
-    {
-        id: "A3",
-        status: false
-    },
-    {
-        id: "A4",
-        status: false
-    },
-    {
-        id: "A5",
-        status: false
-    },
-    {
-        id: "A6",
-        status: false
-    },
-    {
-        id: "A7",
-        status: false
-    },
-    {
-        id: "A8",
-        status: false
-    },
-    {
-        id: "A9",
-        status: false
-    },
-    {
-        id: "A10",
-        status: false
-    },
-    {
-        id: "A11",
-        status: false
-    },
-    {
-        id: "A12",
-        status: false
-    },
+// var seat = [{
+//         id: "C1",
+//         status: false
+//     },
+//     {
+//         id: "C2",
+//         status: false
+//     },
+//     {
+//         id: "C3",
+//         status: false
+//     },
+//     {
+//         id: "C4",
+//         status: false
+//     },
+//     {
+//         id: "C5",
+//         status: false
+//     },
+//     {
+//         id: "C6",
+//         status: false
+//     },
+//     {
+//         id: "C7",
+//         status: false
+//     },
+//     {
+//         id: "C8",
+//         status: false
+//     },
+//     {
+//         id: "C9",
+//         status: false
+//     },
+//     {
+//         id: "C10",
+//         status: false
+//     },
+//     {
+//         id: "C11",
+//         status: false
+//     },
+//     {
+//         id: "C12",
+//         status: false
+//     },
+//     {
+//         id: "B1",
+//         status: false
+//     },
+//     {
+//         id: "B2",
+//         status: false
+//     },
+//     {
+//         id: "B3",
+//         status: false
+//     },
+//     {
+//         id: "B4",
+//         status: false
+//     },
+//     {
+//         id: "B5",
+//         status: false
+//     },
+//     {
+//         id: "B6",
+//         status: false
+//     },
+//     {
+//         id: "B7",
+//         status: false
+//     },
+//     {
+//         id: "B8",
+//         status: false
+//     },
+//     {
+//         id: "B9",
+//         status: false
+//     },
+//     {
+//         id: "B10",
+//         status: false
+//     },
+//     {
+//         id: "B11",
+//         status: false
+//     },
+//     {
+//         id: "B12",
+//         status: false
+//     },
+//     {
+//         id: "A1",
+//         status: false
+//     },
+//     {
+//         id: "A2",
+//         status: false
+//     },
+//     {
+//         id: "A3",
+//         status: false
+//     },
+//     {
+//         id: "A4",
+//         status: false
+//     },
+//     {
+//         id: "A5",
+//         status: false
+//     },
+//     {
+//         id: "A6",
+//         status: false
+//     },
+//     {
+//         id: "A7",
+//         status: false
+//     },
+//     {
+//         id: "A8",
+//         status: false
+//     },
+//     {
+//         id: "A9",
+//         status: false
+//     },
+//     {
+//         id: "A10",
+//         status: false
+//     },
+//     {
+//         id: "A11",
+//         status: false
+//     },
+//     {
+//         id: "A12",
+//         status: false
+//     },
 
-]
+// ]
 
-let user = ['admin']
-let pass = ['admin']
-localStorage.setItem('user', JSON.stringify(user));
-localStorage.setItem('pass', JSON.stringify(pass));
-let authen_state = false;
-localStorage.setItem("authen_state", JSON.stringify(authen_state));
-localStorage.setItem('seat', JSON.stringify(seat));
-// let User = {
-//     user,
-//     pass,
-//     seat,
-//     price,
-//     payment,
-// }
+// var user = ['admin']
+// var pass = ['admin']
+// var authen_state = false;
+// localStorage.setItem('user', JSON.stringify(user));
+// localStorage.setItem('pass', JSON.stringify(pass));
+// localStorage.setItem("authen_state", JSON.stringify(authen_state));
+// localStorage.setItem('seat', JSON.stringify(seat));
+
 
 function signup() {
-    var userName = document.getElementById('username');
-    var passWord = document.getElementById('password');
+    var userName = document.getElementById('username').value;
+    var passWord = document.getElementById('password').value;
 
     user = JSON.parse(localStorage.getItem('user'))
     pass = JSON.parse(localStorage.getItem('pass'))
@@ -187,6 +181,8 @@ function login() {
     for (let index = 0; index < storedName.length; index++) {
 
         if (username.value == storedName[index] || password.value == storedPass[index]) {
+            username = document.getElementById('username').value = "";
+            password = document.getElementById('password').value = "";
 
             $('#popUpWindow').modal('hide')
             // document.getElementById("popUpWindow").className = "modal fade";
@@ -207,8 +203,7 @@ var vm = new Vue({
     data: {
         man_seat: 0,
         baby_seat: 0,
-        authen_state: JSON.parse(localStorage.getItem("authen_state"))
-        ,
+        authen_state: JSON.parse(localStorage.getItem("authen_state")),
         seat_data: JSON.parse(localStorage.getItem('seat')),
         money: 0,
         time: "00:00",
@@ -632,6 +627,7 @@ var vm = new Vue({
         },
         print_recip() {
             alert("This progess is done!");
+            localStorage.setItem('test', JSON.stringify("asd"));
             var prtContent = document.getElementById("print_recip");
             var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
             WinPrint.document.write(prtContent.innerHTML);
@@ -639,9 +635,8 @@ var vm = new Vue({
             WinPrint.focus();
             WinPrint.print();
             WinPrint.close();
-        }
-
-
+        },
+        
 
     },
     computed: {
