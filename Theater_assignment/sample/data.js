@@ -21,6 +21,9 @@ function login() {
     if (username.value !== storedName || password.value !== storedPass) {
         alert('ERROR');
     } else {
+        $('#popUpWindow').modal('hide')
+        // document.getElementById("popUpWindow").className = "modal fade";
+        $('.modal-backdrop').remove();
         alert('Log in successful.');
     }
 }
