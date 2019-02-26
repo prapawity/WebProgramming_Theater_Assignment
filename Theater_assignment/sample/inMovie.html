@@ -166,18 +166,15 @@
                                         <img src="poster/screen.svg" style="width:100%;">
                                         <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
                                     </div>
-                                    <div class="col-1" style="text-align:center;width: 100%;height: 100%;">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h4>D</h4>
-                                            </div>
-                                            <div class="col-12">
+                                    <div class="col-1" >
+                                        <div class="row" style="text-align:center;width: 100%;height: 100%;">
+                                            <div class="col-12" style="margin: auto;padding-top: 5px">
                                                 <h4>C</h4>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-12" style="margin: auto;padding-top: 5px">
                                                 <h4>B</h4>
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-12" style="margin: auto;padding-top: 5px">
                                                 <h4>A</h4>
                                             </div>
 
@@ -187,14 +184,10 @@
                                         <div class="col-1" v-for="sofa in seat_data" style="text-align:center">
                                             <img v-if="!sofa.status" src="poster/seat.png" :id="sofa.id" class="seat"
                                                 v-on:click="seat(sofa.id)">
-                                            <img v-if="sofa.status" src="poster/ticket.png" :id="sofa.id" class="seat"
-                                                v-on:click="seat(sofa.id)">
+                                            <img v-else src="poster/ticket.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
                                         </div>
                                     </div>
                                     <div class="col-1" style="text-align:center;width: 100%;height: 100%;"></div>
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -221,28 +214,28 @@
                                         <img src="poster/kids.png" style="width:10%">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">-</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_kids(-1)">-</button>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
                                         <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
-                                            readonly="readonly" :value="num_kid">
+                                            readonly="readonly" :value="baby_seat">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
                                         <button type="button" class="btn btn-outline-warning" style="height: 100%;"
-                                            v-on:click="">+</button>
+                                        v-on:click="edit_Seat_plus_kids(1)">+</button>
                                     </div>
                                     <div class="col-12" style="text-align:center;margin:auto;">
                                         <img src="poster/parents.png" style="width:10%">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">-</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_man(-1)">-</button>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
                                         <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
-                                            readonly="readonly" :value="num_parent">
+                                            readonly="readonly" :value="man_seat">
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
-                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;">+</button>
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;" v-on:click="edit_Seat_plus_man(1)">+</button>
                                     </div>
 
 

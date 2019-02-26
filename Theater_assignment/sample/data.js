@@ -142,22 +142,6 @@ let seat = [{
         id: 36,
         status: false
     },
-    {
-        id: 37,
-        status: false
-    },
-    {
-        id: 38,
-        status: false
-    },
-    {
-        id: 39,
-        status: false
-    },
-    {
-        id: 40,
-        status: false
-    },
 
 ]
 
@@ -221,10 +205,10 @@ function login() {
 var vm = new Vue({
     el: "#app1",
     data: {
-        seat_data: localStorage.getItem('seat'),
+        man_seat: 0,
+        baby_seat: 0,
+        seat_data: JSON.parse(localStorage.getItem('seat')),
         money: 0,
-        num_kid: 0,
-        num_parent: 0,
         time: "",
         showstate: false,
         numberofseat: 0,
@@ -595,6 +579,8 @@ var vm = new Vue({
 
             this.seat_data[index - 1].status = !this.seat_data[index - 1].status
             localStorage.setItem('seat', JSON.stringify(this.seat_data));
+            this.man_seat = this.numberofseat
+
         },
         selecwatchtime(text) {
             this.time = text;
@@ -615,6 +601,28 @@ var vm = new Vue({
                 return "28 กุมภาพันธ์ 2562"
             } else if (date_id == "date-4") {
                 return "29 กุมภาพันธ์ 2562"
+            }
+        },
+        edit_Seat_plus_man(seat_edit) {
+            if (seat_edit < 0 && this.baby_seat - this.man_seat >= 0) {
+                this.baby_seat += 1;
+                this.man_seat -= 1;
+            } else {
+                if (this.baby_seat >= 1) {
+                    this.baby_seat -= 1;
+                    this.man_seat += 1;
+                }
+            }
+        },
+        edit_Seat_plus_kids(seat_edit) {
+            if (seat_edit < 0 && this.man_seat - this.baby_seat >= 0) {
+                this.baby_seat -= 1;
+                this.man_seat += 1;
+            } else {
+                if (this.man_seat >= 1) {
+                    this.baby_seat += 1;
+                    this.man_seat -= 1;
+                }
             }
         }
 
