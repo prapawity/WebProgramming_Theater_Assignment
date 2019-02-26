@@ -207,6 +207,8 @@ var vm = new Vue({
     data: {
         man_seat: 0,
         baby_seat: 0,
+        authen_state: JSON.parse(localStorage.getItem("authen_state"))
+        ,
         seat_data: JSON.parse(localStorage.getItem('seat')),
         money: 0,
         time: "00:00",
@@ -551,7 +553,7 @@ var vm = new Vue({
                     this.theater_show = this.theaters[index];
                 }
             }
-            console.log(this.city_id)
+            authen_state = JSON.parse(localStorage.getItem("authen_state"));
         },
         loopcreate: function () {
             var lis = [];
@@ -627,6 +629,16 @@ var vm = new Vue({
                     this.man_seat -= 1;
                 }
             }
+        },
+        print_recip() {
+            alert("This progess is done!");
+            var prtContent = document.getElementById("print_recip");
+            var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+            WinPrint.document.write(prtContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
         }
 
 

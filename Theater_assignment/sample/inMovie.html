@@ -209,11 +209,13 @@
                         <div class="card-body" style="padding:0">
                             <div class="container-fluid">
                                 <div class="row" style="margin-bpttom:10px;">
-                                    <div class="col-12" style="height: 50px;text-align:center;margin:auto;padding-top: 20px">
-                                        <h1>{{numberofseat}}</h1>
-                                    </div>
-                                    <div class="col-12" style="text-align:center;margin:auto;">
-                                        <img src="poster/kids.png" style="width:10%">
+                                    <div class="col-12 row" style="text-align:center;margin:auto;">
+                                        <div class="col-12" style="margin: auto;">
+                                            <h2>Kids Price : 100 THB</h2>
+                                        </div>
+                                        <div class="col-12">
+                                            <img src="poster/kids.png" style="width:20%">
+                                        </div>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
                                         <button type="button" class="btn btn-outline-warning" style="height: 100%;"
@@ -227,8 +229,13 @@
                                         <button type="button" class="btn btn-outline-warning" style="height: 100%;"
                                             v-on:click="edit_Seat_plus_kids(1)">+</button>
                                     </div>
-                                    <div class="col-12" style="text-align:center;margin:auto;">
-                                        <img src="poster/parents.png" style="width:10%">
+                                    <div class="col-12 row" style="text-align: center;padding-top: 10px;width: 100%;">
+                                        <div class="col-12" style="">
+                                            <h2>Normal Price : 200 THB</h2>
+                                        </div>
+                                        <div class="col-12" style="">
+                                            <img src="poster/parents.png" style="width:20%">
+                                        </div>
                                     </div>
                                     <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
                                         <button type="button" class="btn btn-outline-warning" style="height: 100%;"
@@ -249,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" v-show="showstate">
+                <div class="card" v-show="showstate" v-if="authen_state">
                     <div class="card-header" id="headingFive" style="background-color:orange;">
                         <h5 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
@@ -272,7 +279,7 @@
                                         <img src="../sample/poster/captain_marvel.jpg" alt="Captain marvel" style="width: 300px;margin: 5%;">
                                     </div>
                                     <div class="col-8">
-                                        <div class="card-body">
+                                        <div class="card-body" id="print_recip">
                                             <div class="container-fluid">
                                                 <div class="row">
                                                     <div class="col-12" style="margin-top: 20px;width: 100%;background-color: yellow;padding: 10px;padding-bottom: 20px;">
@@ -289,15 +296,16 @@
                                                         </h3>
                                                         <h2>{{city_id}}</h2>
                                                         <h3>SF CINEMA</h3>
-                                                        <h1 style="text-align:right">{{"Price : "+money}}</h1>
+                                                        <h1 style="text-align:right">{{"Price : "+(money-(100*baby_seat))+" THB"}}</h1>
                                                     </div>
                                                     <div class="col-12" style="margin-top: 20px;width: 100%;background-color: yellow;padding: 10px;padding-bottom: 20px;">
-                                                        <h1>Payment Method</h1>
+                                                        <h1>Select your Payment to Finish</h1>
                                                     </div>
                                                     <div class="col-12 row" v-if="money > 0" style="width: 100%;padding: inherit;margin: auto;text-align: center;">
                                                         <div class="col-4" style="width: 100%;background-color: #F9E79F;">
-                                                            <a href="#">
-                                                                <img src="poster/pay1.png" style="width: 70%;padding-top: 20px">
+                                                            <a href="indextest.html">
+                                                                <img src="poster/pay1.png" style="width: 70%;padding-top: 20px"
+                                                                    v-on:click="print_recip()">
                                                             </a>
                                                         </div>
                                                         <div class="col-4" style="width: 100%;background-color: #F9E79F;">
