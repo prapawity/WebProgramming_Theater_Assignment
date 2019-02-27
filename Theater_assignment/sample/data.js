@@ -167,11 +167,11 @@ function signup() {
         password = document.getElementById('password').value = "";
         localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('pass', JSON.stringify(pass));
+        alert('Register successful.');
     }
     else{
         alert("Please Input Your Username and Password")
     }
-    alert('Register successful.');
 }
 
 function login() {
