@@ -621,7 +621,7 @@ var vm = new Vue({
             }
         },
         edit_Seat_plus_kids(seat_edit) {
-            if (seat_edit < 0 && this.man_seat - this.baby_seat >= 0) {
+            if (seat_edit < 0 && this.man_seat - this.baby_seat >= 0 && this.baby_seat >= 0) {
                 this.baby_seat -= 1;
                 this.man_seat += 1;
             } else {
