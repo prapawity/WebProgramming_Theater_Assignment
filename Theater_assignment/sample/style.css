@@ -418,3 +418,9 @@ input[type=text]:focus {
       background: #2f66cd;
       background: linear-gradient(90deg, #2f66cd, #4db0db 75%, #5ab6de);
 }
+#btn_time:active{
+      background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);
+}
+#btn_time:focus{
+      background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);
+}
