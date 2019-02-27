@@ -1,27 +1,44 @@
 <div class="col-1" style="text-align:center;margin: auto">
-        <h4>C</h4>
-    </div> -->
+    <h4>C</h4>
+</div> -->
 <div class="col-1" v-for="sofa in seat2" style="text-align:center">
-<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+    <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
 </div>
 <div class="col-1" style="text-align:center"></div>
 <!-- <div class="col-1" style="text-align:center;margin: auto">
         <h4>B</h4>
     </div> -->
 <div class="col-1" v-for="sofa in seat3" style="text-align:center">
-<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+    <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
 </div>
 <div class="col-1" style="text-align:center"></div>
 <!-- <div class="col-1" style="text-align:center;margin: auto">
         <h4>A</h4>
     </div> -->
 <div class="col-1" v-for="sofa in seat4" style="text-align:center">
-<img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+    <img src="poster/seat.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
 </div>
 <div class="col-1" style="text-align:center"></div>
 <div class="col-1" style="text-align:center;margin: auto">
 </div>
 <div class="col-1" v-for="n in 10" style="text-align:center;padding-top: 10px;">
-<h4>{{n}}</h4>
+    <h4>{{n}}</h4>
 </div>
 <div class="col-1" style="text-align:center"></div>
+
+<nav style="z-index:2;text-align: right;background-color:tranparent">
+    <a href="indextest.html">
+        <img class="logo" style="width: auto;min-width: 10%; max-width: 15%;padding:10px" src="poster/moviehub1kpx.png">
+    </a>
+    <ul style="width:100;margin-bottom:0;text-align:right">
+        <li v-if="!authen_state"> <button type='button' class="btn btn-success btn-lg" data-toggle="modal" data-target="#popUpWindow"
+                style="background-color:orange;border-color: orange;color: black;" v-on:click="set_local">Sign
+                in / Sign up</button>
+        </li>
+        <li v-if="authen_state">
+            <a href="information.html">
+                <h1 style="color:black;">Information</h1>
+            </a>
+        </li>
+    </ul>
+</nav>

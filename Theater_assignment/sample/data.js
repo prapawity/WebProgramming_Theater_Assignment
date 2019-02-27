@@ -157,16 +157,20 @@
 function signup() {
     var userName = document.getElementById('username').value;
     var passWord = document.getElementById('password').value;
+    if (userName != "" && passWord != "") {
 
-    user = JSON.parse(localStorage.getItem('user'))
-    pass = JSON.parse(localStorage.getItem('pass'))
-    user.push(userName)
-    pass.push(passWord)
-    username = document.getElementById('username').value = "";
-    password = document.getElementById('password').value = "";
-    localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('pass', JSON.stringify(pass));
-
+        user = JSON.parse(localStorage.getItem('user'))
+        pass = JSON.parse(localStorage.getItem('pass'))
+        user.push(userName)
+        pass.push(passWord)
+        username = document.getElementById('username').value = "";
+        password = document.getElementById('password').value = "";
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('pass', JSON.stringify(pass));
+    }
+    else{
+        alert("Please Input Your Username and Password")
+    }
     alert('Register successful.');
 }
 
@@ -833,8 +837,7 @@ var vm = new Vue({
                     return false
                 }
                 return true
-            }
-            else{
+            } else {
                 return false
             }
         },
