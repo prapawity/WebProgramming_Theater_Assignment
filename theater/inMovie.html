@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Theater</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="icon" href="poster/icon.png">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body onload="myFunction()">
+    <div style="position:fixed;width:100%;height:100vh;background-color: orange;z-index: 20;" id="loader">
+        <div class="frame">
+            <div class="center">
+                <div class="dot-1"></div>
+                <div class="dot-2"></div>
+                <div class="dot-3"></div>
+            </div>
+        </div>
+    </div>
+    <div id="app1" style="background-image: url(http://www.wallpapermaiden.com/image/2019/02/17/carol-danvers-captain-marvel-artwork-30396.jpeg);height: 100%;background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover;top: 100vh">
+        <navbar></navbar>
+        <div class="jumbotron" style="height: 200vh;z-index: 1;background-color: transparent">
+            <!-- <video class="video-background" preload="true" muted="false" autoplay="true" loop="true"> -->
+            <!-- <source src="../asset/capmarvel.mp4" type="video/mp4" /> -->
+            <iframe class="video-background" src="https://www.youtube.com/embed/Z1BCujX3pw8?autoplay=1" style="padding-top: 100vh"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <!-- </video> -->
+        </div>
+        <div class="container" style="background-color:#EAECEE;margin-top: 10px">
+            <div class="row">
+                <div class="col-md-12 border-bottom" style="text-align:left;margin-top: 15px;">
+                    <h1>{{movies[0].name.en}}</h1>
+                    <h2>{{movies[0].name.th}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" style="background-color: black;">
+                    <img src="../sample/poster/captain_marvel.jpg" alt="Captain marvel" style="width: 300px;margin: 5%;">
+
+                    <p class="desc-movie">Directors: {{movies[0].director}}</p>
+                    <p class="desc-movie">Stars: {{movies[0].actors}}</p>
+                    <!-- <p class="desc-movie">Movie Studios: </p> -->
+                </div>
+                <div class="col-md-8" style="background-color: #323232;">
+                    <p class="desc-movie" v-html="movies[0].synopsis">{{movies[0].synopsis}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 20px;padding-bottom: 30px">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne" style="color:white;">
+                                <h3>Choose Theater</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12" style="margin-top: 15px;width: 100%">
+                                        <select class="custom-select custom-select-lg mb-3" v-model="city_id">
+                                            <option selected value="0">Select Theater</option>
+                                            <option v-for="city in city" v-bind:value="city.name">{{city.name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" v-show="showstate">
+                    <div class="card-header" id="headingTwo" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo" style="color:white;">
+                                <h3>Choose Your Time</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample"
+                        style="margin-bottom:10px;">
+                        <div class="card-body" style="padding:0">
+                            <div class="container-fluid">
+                                <div class="row" style="margin-bpttom:10px;">
+                                    <div class="col-12" style="height: 50px;text-align:center;margin:auto;background-color: #e0e5f2;">
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
+                                            data-interval="false" style="padding-top:10px">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active" id="date-0">
+                                                    <h1>25 กุมภาพันธ์ 2562</h1>
+                                                </div>
+                                                <div v-for="dates in date" class="carousel-item" id="dates.id">
+                                                    <h1>{{dates.text}}</h1>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                                data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only" style="background-color:orange">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                                data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only" style="background-color:orange">Next</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12" v-for="theater_loop in theater_show.theater" style="padding:0">
+                                        <div class="col-12" style="width: 100%;background-color: #FBEEE6;height: 50px;padding-top: 10px">
+                                            <h1 style="color:#1e63af;">{{theater_loop.theater_name}}</h1>
+                                        </div>
+                                        <div class="col-3" style="margin-top: 15px;width: 100%;text-align: center;margin: auto;padding-top: 10px">
+                                            <img src="https://upload.wikimedia.org/wikipedia/th/0/01/Sf-ipad.png" style="width:30%">
+                                        </div>
+                                        <div class="card-body" style="border-top: 1px solid #c6c7c7;margin: 10px;">
+                                            <div class="container-fluid" style="width: 100%">
+                                                <div class="row">
+                                                    <div class="col-12" style="width: 100%">
+                                                        <h1>ENG/TH</h1>
+                                                    </div>
+                                                    <div class="col-2" v-for="time in theater_loop.time" style="width: 100%;height: 5vh;text-align: left;background-color: transparent">
+                                                        <button id="btn_time" class="button-showtime" style="width:100%;height: 100%;"
+                                                            v-on:click="selecwatchtime(time)"><h3>{{time}}</h3></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" v-show="showstate">
+                    <div class="card-header" id="headingThree" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree" style="color:white;width: 100%;text-align: left">
+                                <h3>Choose Your Seat</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12" style="text-align:center;margin-bottom: 30px">
+                                        <img src="poster/screen.svg" style="width:100%;">
+                                        <h3 style="position: relative;margin-top: -100px">Theater Screen</h3>
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="row" style="text-align:center;width: 100%;height: 100%;">
+                                            <div class="col-12" style="padding-top: 5px">
+                                                <h4>C</h4>
+                                            </div>
+                                            <div class="col-12" style="padding-top: 5px">
+                                                <h4>B</h4>
+                                            </div>
+                                            <div class="col-12" style="padding-top: 5px">
+                                                <h4>A</h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-10 row">
+                                        <div class="col-1" v-for="sofa in seat_data" style="text-align:center">
+                                            <img v-if="!sofa.status" src="poster/seat.png" :id="sofa.id" class="seat"
+                                                v-on:click="seat(sofa.id)">
+                                            <img v-else src="poster/ticket.png" :id="sofa.id" class="seat" v-on:click="seat(sofa.id)">
+                                        </div>
+                                        <div class="col-1" v-for="n in 12" style="text-align: center;width: 100%;height: 100%;padding-top: 10px">
+                                            <h2>{{n}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" v-show="showstate">
+                    <div class="card-header" id="headingFour" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                                aria-expanded="false" aria-controls="collapseFour" style="color:white;">
+                                <h3>Choose Your Type</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample"
+                        style="margin-bottom:10px;">
+                        <div class="card-body" style="padding:0">
+                            <div class="container-fluid">
+                                <div class="row" style="margin-bpttom:10px;">
+                                    <div class="col-12 row" style="text-align:center;margin:auto;">
+                                        <div class="col-12" style="margin: auto;">
+                                            <h2>Kids Price : 100 THB</h2>
+                                        </div>
+                                        <div class="col-12">
+                                            <img src="poster/kids.png" style="width:20%">
+                                        </div>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_kids(-1)">-</button>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
+                                        <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
+                                            readonly="readonly" :value="baby_seat">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_kids(1)">+</button>
+                                    </div>
+                                    <div class="col-12 row" style="text-align: center;padding-top: 10px;width: 100%;">
+                                        <div class="col-12" style="">
+                                            <h2>Normal Price : 200 THB</h2>
+                                        </div>
+                                        <div class="col-12" style="">
+                                            <img src="poster/parents.png" style="width:20%">
+                                        </div>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:right;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_man(-1)">-</button>
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:center;margin:auto;padding-top: 10px">
+                                        <input type="text" style="width:100%;height: 100%;text-align: center;font-size: 2em"
+                                            readonly="readonly" :value="man_seat">
+                                    </div>
+                                    <div class="col-4" style="height: 50px;text-align:left;margin:auto;padding-top: 10px">
+                                        <button type="button" class="btn btn-outline-warning" style="height: 100%;"
+                                            v-on:click="edit_Seat_plus_man(1)">+</button>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" v-show="showstate" >
+                    <div class="card-header" id="headingFive" style="background-color:orange;">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+                                aria-expanded="false" aria-controls="collapseFive" style="color:white;">
+                                <h3>Confirm Ticket</h3>
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                        <div class="card-body" style="padding:0;">
+                            <div class="container" style="background: linear-gradient(90deg,#2f66cd,#4db0db 75%,#5ab6de);">
+                                <div class="row" style="margin-bpttom:10px;">
+                                    <div class="col-6" style="text-align:right;padding-top: 20px;padding-bottom: 10px;">
+                                        <img src="poster/receipt.png" style="width:15%;height: auto">
+                                    </div>
+                                    <div class="col-6" style="text-align:left;padding-top: 20px;padding-bottom: 10px;margin: auto">
+                                        <h1> - Receipt - </h1>
+                                    </div>
+                                    <div class="col-4" style="text-align:center;margin:auto;padding-top: 20px;padding-bottom: 10px;">
+                                        <img src="../sample/poster/captain_marvel.jpg" alt="Captain marvel" style="width: 300px;margin: 5%;">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body" id="print_recip">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-12" style="margin-top: 20px;width: 100%;background-color: yellow;padding: 10px;padding-bottom: 20px;">
+                                                        <h1>{{movies[0].name.en+"("+movies[0].name.th+")"}}</h1>
+                                                    </div>
+                                                    <div class="col-12" style="width: 100%;background-color: #F9E79F">
+                                                        <h2 style="margin-top:10px;">{{showdate()}}</h2>
+                                                        <h3>{{time}}</h3>
+                                                        <h3>Seat NO:
+                                                            <span v-for="sofa in seat_data" style="font: size 2em;">
+                                                                <span v-if="sofa.status">{{sofa.id+", "}}</span>
+
+                                                            </span>
+                                                        </h3>
+                                                        <h2>{{city_id}}</h2>
+                                                        <h3>SF CINEMA</h3>
+                                                        <h1 style="text-align:right">{{"Price : "+(money-(100*baby_seat))+" THB"}}</h1>
+                                                    </div>
+                                                    <div class="col-12" style="margin-top: 20px;width: 100%;background-color: yellow;padding: 10px;padding-bottom: 20px;">
+                                                        <h1>Select your Payment to Finish</h1>
+                                                    </div>
+                                                    <div class="col-12 row" v-if="money > 0" style="width: 100%;padding: inherit;margin: auto;text-align: center;">
+                                                        <div class="col-4" style="width: 100%;background-color: #F9E79F;">
+                                                            <a href="indextest.html">
+                                                                <img src="poster/pay1.png" style="width: 70%;padding-top: 20px"
+                                                                    v-on:click="print_recip1(1)">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-4" style="width: 100%;background-color: #F9E79F;">
+                                                            <a href="indextest.html">
+                                                                <img src="poster/pay2.png" style="width: 70%;padding-top: 20px" 
+                                                                v-on:click="print_recip1(2)">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-4" style="width: 100%;background-color: #F9E79F;">
+                                                            <a href="indextest.html">
+                                                                <img src="https://qr-generator.digio.co.th/static/media/promptpay.75db5c8f.jpg"
+                                                                    style="width: 100%;padding-top: 50px" v-on:click="print_recip1(3)">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="./component.js"></script>
+    <script src="./data.js"></script>
+    <script src="./collap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
